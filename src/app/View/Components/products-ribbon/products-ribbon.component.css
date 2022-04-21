@@ -1,0 +1,118 @@
+.card-div{
+    width: fit-content;
+    margin-right: 3%;
+}
+
+.slider{
+    overflow-x: scroll;
+    height: auto;
+    width: fit-content;
+    min-width: 100%;
+    display: flex;
+    margin: 0 -2%;
+}
+
+/*@media (max-width: 300px) {
+    .card-div { width: 100%; }
+  }
+  
+  @media (max-width: 400px) and (min-width: 300px) {
+    .card-div { width: 70%; }
+  }
+
+  @media (max-width: 600px) and (min-width: 400px) {
+    .card-div { width: 60%; }
+  }
+
+  @media (max-width: 800px) and (min-width: 600px) {
+    .card-div { width: 40%; }
+  }
+
+  @media (max-width: 1000px) and (min-width: 800px) {
+    .card-div { width: 30%; }
+  }
+
+  @media (max-width: 1200px) and (min-width: 1000px) {
+    .card-div { width: 25%; }
+  }
+
+  @media (min-width: 1200px) {
+    .card-div { width: 20%; }
+  }*/
+
+::-webkit-scrollbar {
+    width: 0; 
+    background: transparent;
+}
+
+
+.left {
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 3%;
+  height: initial;
+  display: inline-flex;
+  z-index: 1;
+  justify-content: center;
+}
+
+.left a {
+  height: fit-content;
+  display: inline-flex;
+  align-self: center;
+}
+
+.left a fa-icon{
+  color: #24282cd4
+}
+
+.ribbon-container {
+  height: fit-content;
+  display: inline-flex;
+  width: 100%;
+}
+
+
+.right {
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 3%;
+  height: initial;
+  display: inline-flex;
+  z-index: 1;
+  justify-content: center;
+}
+
+.right a {
+  height: fit-content;
+  display: inline-flex;
+  align-self: center;
+  z-index: -10;
+}
+
+.right a fa-icon{
+  color: #24282cd4;
+  z-index: -10;
+}
+
+.left:hover {
+  background-color: rgba(0, 0, 0, 0.45); 
+  cursor: pointer;
+}
+
+.right:hover {
+  background-color: rgba(0, 0, 0, 0.45); 
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .left { display: none; }
+  .right { display: none; }
+  .slider {
+    margin-left: 4%;
+    margin-right: 4%;
+    min-width: 90%;
+  }
+  /*.card-div{
+    transform: scale(0.8);
+  }*/
+}
+

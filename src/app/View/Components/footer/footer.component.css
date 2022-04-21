@@ -1,0 +1,33 @@
+body {
+  background: linear-gradient(to left, rgb(6, 114, 0), rgb(158, 230, 175));
+  height: 25rem;
+  box-shadow: 0 2px 7px #8a8888;
+  margin-top: 2rem;
+}
+
+#button-addon1 {
+  color: rgba(217,194,162);
+}
+
+i {
+  color: rgba(217,194,162);
+}
+
+h4{
+  font-size: 1.2rem;
+}
+
+.form-control::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+.form-control.shadow-0:focus {
+  box-shadow: none;
+}
+
+li:hover{
+  background-color: transparent;
+  transform: scale(1.15);
+}

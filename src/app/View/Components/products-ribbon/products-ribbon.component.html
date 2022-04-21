@@ -1,0 +1,18 @@
+<div class="ribbon-container">
+  <div class="left" (click)="slideRibbonLeft()">
+    <a >
+      <fa-icon class="fa-2xl" [icon]="faAngleLeft"></fa-icon>
+    </a>
+  </div>
+  <div #slider class="slider">
+    <div class="card-div" *ngFor="let prod of productList; let i =index">
+        <app-product-card  [product]="prod" cardwidth="190px">
+        </app-product-card>
+    </div>
+  </div>
+  <div class="right" (click)="slideRibbonRight()">
+    <a >
+      <fa-icon class="fa-2xl" [icon]="faAngleRight"></fa-icon>
+    </a>
+  </div>
+</div>

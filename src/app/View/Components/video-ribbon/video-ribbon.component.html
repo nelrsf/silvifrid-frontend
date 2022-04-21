@@ -1,0 +1,18 @@
+<div class="main-ribbon">
+    <div class="asset-container" *ngFor="let a of assets">
+        <video 
+            *ngIf="a.type=='video'"
+            src={{a.src}}; 
+            width="100%"
+            height="auto"
+            controls>
+        </video>
+        <div class="img-container" *ngIf="a.type=='image'">
+            <img src="{{a.src}}"
+            width="100%"
+            height="auto">
+        </div>
+    </div>
+</div>
+
+

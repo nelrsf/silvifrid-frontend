@@ -1,0 +1,56 @@
+<div class="product">
+	<div class="product__photo">
+		<div class="photo-container">
+			<div class="photo-main">
+				<div class="photo-thumb">
+					<div class="controls">
+						<i class="material-icons">share</i>
+						<i class="material-icons">favorite_border</i>
+					</div>
+					<img src="{{product.images[indxImg]}}" alt="">
+				</div>
+				<div class="photo-album">
+					<ul class="list-unstyled">
+						<li *ngFor="let img of product.images; let i =index"><img (click)="selectImg(i)" src="{{img}}" alt=""></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="product__info card">
+		<div class="title">
+			<h1>{{product.name}}</h1>
+			<span>COD: {{product._id | slice:-4 | uppercase}}</span>
+		</div>
+		<div class="price">
+			COP <span>{{product.price | number: '2.'}}</span>
+		</div>
+		<span class="purchase-titles">CANTIDAD</span>
+		<div class="quantity">
+			<div>
+				<input class="mt-2" type="number" value="1">
+				<button>
+					<fa-icon [icon]="faPlus"></fa-icon>
+				</button>
+				<button>
+					<fa-icon [icon]="faMinus"></fa-icon>
+				</button>
+			</div>
+		</div>
+		<span class="purchase-titles mt-3">BENEFICIOS</span>
+		<div class="description">
+			<ul>
+				<li *ngFor="let b of product.benefits">{{b}}</li>
+			</ul>
+		</div>
+		<button class="buy--btn">AÑADIR AL CARRITO</button>
+		<div class="card product-description">
+			<div class="h6 mb-5 mt-3">DESCRIPCIÓN</div>
+            <span>{{product.description}}</span>
+		</div>
+	</div>
+	<div class="video-container">
+		<app-video-ribbon></app-video-ribbon>
+	</div>
+</div>
+

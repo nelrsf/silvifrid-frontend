@@ -1,0 +1,74 @@
+[
+    {
+     "name":"Jabon de café", 
+     "description": "Jabón artesanal hecho a base de café, aroma natural",
+     "category": "higiene",
+     "price": 5800.80,
+     "quantity": 24,
+     "mainImgUrl":"https://static.eldiario.es/clip/1a916b0b-a4db-40d9-bc84-78ac9fb04a29_16-9-aspect-ratio_default_0.jpg"
+    },
+    {
+        "name":"Jabon de miel", 
+        "description": "Jabón artesanal hecho a base de miel, aroma natural, Jabón artesanal hecho a base de miel, aroma natural Jabón artesanal hecho a base de miel, aroma natural",
+        "category": "higiene",
+        "price": 7600.80,
+        "quantity": 22,
+        "mainImgUrl":"https://speisekarte.menu/storage/media/dishes_main/2251335/tea.jpg"
+    },
+    {
+        "name":"Crema de café", 
+        "description": "Crema artesanal hecha a base de café, aroma natural",
+        "category": "belleza",
+        "price": 3800.80,
+        "quantity": 17,
+        "mainImgUrl":"../assets/img/1.png"
+    },
+    {
+        "name":"Crema de miel", 
+        "description": "Crema artesanal hecha a base de miel, aroma natural",
+        "category": "belleza",
+        "price": 4200.80,
+        "quantity": 12,
+        "mainImgUrl":"https://www.vidalia.com.co/wp-content/uploads/2021/03/beneficios-del-cafe-imagen-destacada-1200x900.jpg"
+    },
+    {
+        "name":"Crema de miel", 
+        "description": "Crema artesanal hecha a base de miel, aroma natural",
+        "category": "belleza",
+        "price": 4200.80,
+        "quantity": 12,
+        "mainImgUrl":"../assets/img/1.png"
+    },
+    {
+        "name":"Crema de miel", 
+        "description": "Crema artesanal hecha a base de miel, aroma natural",
+        "category": "belleza",
+        "price": 4200.80,
+        "quantity": 12,
+        "mainImgUrl":"https://elpoderdelconsumidor.org/wp-content/uploads/2021/04/cafe.jpg"
+    },
+    {
+        "name":"Jabon de café", 
+        "description": "Jabón artesanal hecho a base de café, aroma natural",
+        "category": "higiene",
+        "price": 5800.80,
+        "quantity": 24,
+        "mainImgUrl":"https://static.eldiario.es/clip/1a916b0b-a4db-40d9-bc84-78ac9fb04a29_16-9-aspect-ratio_default_0.jpg"
+    },
+    {
+        "name":"Crema de miel", 
+        "description": "Crema artesanal hecha a base de miel, aroma natural",
+        "category": "belleza",
+        "price": 4200.80,
+        "quantity": 12,
+        "mainImgUrl":"https://www.vidalia.com.co/wp-content/uploads/2021/03/beneficios-del-cafe-imagen-destacada-1200x900.jpg"
+    },
+    {
+        "name":"Crema de miel", 
+        "description": "Crema artesanal hecha a base de miel, aroma natural",
+        "category": "belleza",
+        "price": 4200.80,
+        "quantity": 12,
+        "mainImgUrl":"https://elpoderdelconsumidor.org/wp-content/uploads/2021/04/cafe.jpg"
+    }
+]

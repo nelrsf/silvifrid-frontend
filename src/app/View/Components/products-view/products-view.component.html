@@ -1,0 +1,7 @@
+<div class="cards">
+    <div class="grid-cell" *ngFor="let prod of productList; let i =index">
+        <app-product-card [product]="prod" cardwidth="250px">
+        </app-product-card>
+    </div>
+</div>
+

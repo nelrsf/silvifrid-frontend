@@ -1,0 +1,19 @@
+.main-ribbon{
+    overflow-y: scroll;
+    height: 40rem;
+}
+
+.video-container{
+    width:"100%";
+    height:"auto";
+    margin-bottom: 2rem;
+}
+
+.img-container{
+    margin-bottom: 2rem;
+}
+
+.img-container img{
+    width:"100%";
+    height:"auto";
+}

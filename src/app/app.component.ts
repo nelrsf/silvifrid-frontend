@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'silvifrid-app';
+  title = 'Silvifrid Organic';
+  faFacebook = faTwitter;
+    constructor(){
+    }
+  
 }

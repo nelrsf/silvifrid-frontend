@@ -1,0 +1,33 @@
+body {
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
+	color: #2c2c2c;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+strong,
+.fw-700 {
+	font-weight: 700;
+}
+
+h1 {
+	font-family: "Playfair Display", serif;
+	font-size: 7rem;
+	font-weight: 700;
+}
+h2 {
+	font-family: "Playfair Display", serif;
+	font-size: 2rem;
+	font-weight: 700;
+	font-style: italic;
+}
+
+.lead {
+	font-size: 1.2rem;
+	font-weight: 400;
+}
