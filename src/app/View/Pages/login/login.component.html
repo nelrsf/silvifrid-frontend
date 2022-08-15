@@ -1,23 +1,25 @@
-<div *ngIf="user!=null" style="display: flex;" class="mt-2"> 
-  <img src="{{user.photoURL}}" width="50px" class="mx-3">
-  <h3>Bienvenid@ {{user.displayName}}</h3>
+<div class="main-signup">
+  <div class="signup">
+    <h4>Inicia sesión con tus redes sociales</h4>
+      <div class="signup-connect">
+        <a (click)="fbLogin()" class="btn btn-social btn-facebook"><fa-icon [icon]="faFacebook"></fa-icon></a>
+        <a (click)="twLogin()" class="btn btn-social btn-twitter"><fa-icon [icon]="faTwitter"></fa-icon></a>
+        <a (click)="ggLogin()" class="btn btn-social btn-google"><fa-icon [icon]="faGoogle"></fa-icon></a>
+      </div>
+      <div class="signup-classic">
+        <br>
+        <div class="login-options" *ngIf="logOption==initMode.SIGNUP_MODE">
+          <app-sign-up-form></app-sign-up-form>
+          <br>
+          <a (click)="goToSignUp()">¿Ya tienes cuenta? Inicia sesión</a>
+        </div>
+        <div class="login-options" *ngIf="logOption==initMode.LOGIN_MODE">
+          <app-login-form></app-login-form>
+          <br>
+          <a (click)="goToLogIn()">¿Aún no tienes cuenta? Registrate</a>
+          <br>
+          <a (click)="rememberPassword()">¿No recuerdas tu contraseña? Recuperala</a>
+        </div>
+      </div>
+   </div>
 </div>
-<div class="signup">
-    <div class="signup-connect">
-      <h2>Inicia sesión</h2>
-      <a (click)="fbLogin()" class="btn btn-social btn-facebook"><fa-icon class="mr-3" [icon]="faFacebook"></fa-icon>Facebook</a>
-      <a href="#" class="btn btn-social btn-twitter"><fa-icon class="mr-3" [icon]="faTwitter"></fa-icon>Twitter</a>
-      <a href="#" class="btn btn-social btn-google"><fa-icon class="mr-3" [icon]="faGoogle"></fa-icon>Google</a>
-      <a (click)="igLogin()" class="btn btn-social btn-Instagram"><fa-icon class="mr-3" [icon]="faInstagram"></fa-icon>Instagram</a>
-    </div>
-    <div class="signup-classic">
-      <router-outlet></router-outlet>
-      <br>
-      <div class="login-options" *ngIf="logOption=='login'">
-        <a (click)="goToLogIn()">¿Ya tienes cuenta? Inicia sesión</a>
-      </div>
-      <div class="login-options" *ngIf="logOption=='signup'">
-        <a (click)="goToSignUp()">¿Aún no tienes cuenta? Registrate</a>
-      </div>
-    </div>
- </div>

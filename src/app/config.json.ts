@@ -1,5 +1,4 @@
 export const CONFIG_APP = {
-    backend_url: "https://silvifrid-server.herokuapp.com",
     firebaseConfig : {
         apiKey: "AIzaSyAuLrWBJx-yk-L988tmvCT_oSQ0P5LtXnE",
         authDomain: "silvifrid-organic-auth.firebaseapp.com",

@@ -1,0 +1,22 @@
+<div class="signup-classic">
+    <h4 class="mb-2">Crea tu cuenta</h4>
+    <form class="form">
+      <fieldset class="username">
+        <input #userName type="text" placeholder="username" />
+      </fieldset>
+      <fieldset class="email">
+        <input  #email type="email" placeholder="email" />
+      </fieldset>
+      <fieldset class="password">
+        <input  #password1   (keyup)="checkPasswordsMatch()" type="password" placeholder="password" />
+      </fieldset>
+      <fieldset class="password">
+        <input  (keyup)="checkPasswordsMatch()" #password2  type="password" placeholder="confirm password" />
+      </fieldset>
+
+      <p *ngIf="!passwordMatch" class="text-danger">Las contraseñas no coinciden</p>
+
+      <button (click)="emailPasswordSignIn($event)" class="btn btn-success">Registrarme</button>
+    </form>
+  </div>
+

@@ -4,23 +4,20 @@ import { LoginComponent } from './View/Pages/login/login.component';
 import { BlogComponent } from './View/Pages/blog/blog.component';
 import { PurchaseComponent } from './View/Pages/purchase/purchase.component';
 import { StoreComponent } from './View/Pages/store/store.component';
-import { LoginFormComponent } from './View/Components/login-form/login-form.component';
-import { SignUpFormComponent } from './View/Components/sign-up-form/sign-up-form.component';
 import { PrivacyComponent } from './View/Pages/privacy/privacy.component';
+import { UserProfileComponent } from './View/Pages/user-profile/user-profile.component';
+import { CookiesPrivacyComponent } from './View/Pages/cookies-privacy/cookies-privacy.component';
 
 
 const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'store', component: StoreComponent },
   { path: 'purchase', component: PurchaseComponent },
-  { path: 'login', 
-    component: LoginComponent,
-   children: [
-    { path: 'login-form', component: LoginFormComponent},
-    { path: 'signup-form', component: SignUpFormComponent}
-   ] },
+  { path: 'login', component: LoginComponent },
+  { path: 'user-profile', component: UserProfileComponent},
   { path: '', component: StoreComponent },
-  { path: 'privacy', component: PrivacyComponent}
+  { path: 'privacy', component: PrivacyComponent},
+  { path: 'cookies', component: CookiesPrivacyComponent}
 ];
 
 @NgModule({
