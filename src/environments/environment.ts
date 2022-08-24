@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   backend_url: "https://silvifrid-server.herokuapp.com",
+  avatars_main_route: "./../../../../../assets/img/avatars/",
+  max_avatar_number_images: 13
 };
 
 /*

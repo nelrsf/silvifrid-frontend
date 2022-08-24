@@ -7,17 +7,23 @@ import { User } from 'src/app/Model/user';
 })
 export class CookiesSessionService {
 
-  constructor(private cookie: CookieService) { /* TODO document why this constructor is empty */  }
+  private timerMinutes = 30;
 
-  setCookiesSession(user: User){
+  constructor(private cookie: CookieService) { /* TODO document why this constructor is empty */ }
+
+  setExpirationCallback(expireFunction: () => void) {
+    setTimeout(expireFunction, this.timerMinutes * 60 * 1000);
+  }
+
+  setCookiesSession(user: User) {
     let dateTime = new Date();
-    dateTime.setMinutes(dateTime.getMinutes()+30)
+    dateTime.setMinutes(dateTime.getMinutes() + this.timerMinutes)
     this.cookie.set("displayName", user.displayName, dateTime);
     this.cookie.set("email", user.email, dateTime);
     this.cookie.set("photURL", user.photoURL, dateTime);
   }
 
-  getCookiesSession(){
+  getCookiesSession() {
     return {
       email: this.cookie.get("email"),
       displayName: this.cookie.get("displayName"),
@@ -25,10 +31,12 @@ export class CookiesSessionService {
     }
   }
 
-  closeCookieSession(){
+  closeCookieSession() {
     this.cookie.delete("displayName");
     this.cookie.delete("email");
     this.cookie.delete("photoURL");
   }
+
+
 
 }

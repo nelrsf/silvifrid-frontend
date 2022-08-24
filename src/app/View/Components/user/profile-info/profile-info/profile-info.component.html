@@ -1,1 +1,29 @@
-<p>profile-info works!</p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="field">
+    <th mat-header-cell *matHeaderCellDef> Campo </th>
+    <td class="text-dark cell-border" mat-cell *matCellDef="let element"> {{element.field}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="value">
+    <th mat-header-cell *matHeaderCellDef> Valor </th>
+    <td mat-cell class="text-dark  cell-border" *matCellDef="let element">
+      <p class="ml-2"> {{element.value}}</p>
+    </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef> Accion </th>
+    <td class="cell-border" mat-cell *matCellDef="let element">
+      <a class="action-link ml-2" (click)="getPupUpEditField(element)">
+        <fa-icon [icon]="faEdit"></fa-icon>
+      </a>
+    </td>
+  </ng-container>
+
+
+  <tr class="border-top mb-1 bg-light" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

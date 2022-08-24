@@ -9,14 +9,14 @@
       <div class="signup-classic">
         <br>
         <div class="login-options" *ngIf="logOption==initMode.SIGNUP_MODE">
-          <app-sign-up-form></app-sign-up-form>
+          <app-sign-up-form (goToLogin)="goToLogIn()"></app-sign-up-form>
           <br>
-          <a (click)="goToSignUp()">¿Ya tienes cuenta? Inicia sesión</a>
+          <a (click)="goToLogIn()">¿Ya tienes cuenta? Inicia sesión</a>
         </div>
         <div class="login-options" *ngIf="logOption==initMode.LOGIN_MODE">
           <app-login-form></app-login-form>
           <br>
-          <a (click)="goToLogIn()">¿Aún no tienes cuenta? Registrate</a>
+          <a (click)="goToSignUp()">¿Aún no tienes cuenta? Registrate</a>
           <br>
           <a (click)="rememberPassword()">¿No recuerdas tu contraseña? Recuperala</a>
         </div>

@@ -1,16 +1,27 @@
 export class User {
     private _displayName!: string
     private _email!: string
+    private _phoneNumber!: string;
     private _photoURL!: string
     private _metadata = {
         createdAt: 0
     };
-
+    private _reloadUserInfo = {
+        photoUrl: ''
+    };
 
     constructor() {
         this._displayName = "";
         this._email = "";
         this._photoURL = "";
+        this._phoneNumber = "";
+    }
+
+    public get reloadUserInfo() {
+        return this._reloadUserInfo;
+    }
+    public set reloadUserInfo(value) {
+        this._reloadUserInfo = value;
     }
 
     public get metadata() {
@@ -18,6 +29,14 @@ export class User {
     }
     public set metadata(value) {
         this._metadata = value;
+    }
+
+
+    public get phoneNumber(): string {
+        return this._phoneNumber;
+    }
+    public set phoneNumber(value: string) {
+        this._phoneNumber = value;
     }
 
     public get displayName(): string {

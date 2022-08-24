@@ -1,6 +1,8 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
 <!------ Include the above in your HEAD tag ---------->
 <div class="container emp-profile">
     <form method="post">
@@ -8,20 +10,19 @@
             <div class="col-md-4">
                 <div class="profile-img">
                     <img src="{{user.photoURL}}" alt="" />
-                    <div class="file btn btn-lg btn-primary">
-                        Cambiar Imagen
-                        <input type="file" name="file" />
+                    <div (click)="openImagePickerDialog()" class="file btn btn-lg btn-primary">
+                        Cambiar imagen
                     </div>
                 </div>
                 <div class="profile-work">
-                    <h6>ACCIONES</h6>
+                    <h4>ACCIONES</h4>
                     <ul>
-                        <li>
+                        <li class="mb-2">
                             <a (click)="logOut($event)" class="profile-edit-btn">
                                 Cerrar Sesión
                             </a>
                         </li>
-                        <li>
+                        <li  class="mb-2">
                             <a href="" class="profile-edit-btn">
                                 Eliminar cuenta
                             </a>
@@ -33,13 +34,13 @@
             <div class="col-md-8">
 
                 <div class="mb-5">
-                    <div class="profile-head">
-                        <h5>
+                    <div class="profile-head ml-3">
+                        <h2>
                             {{user.displayName}}
-                        </h5>
-                        <h6>
+                        </h2>
+                        <h3>
                             {{user.email}}
-                        </h6>
+                        </h3>
                     </div>
                 </div>
 
@@ -62,41 +63,8 @@
                     <div class="tab-content profile-tab" id="myTabContent">
 
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
-                            <div class="row mt-4">
-                                <div class="col-md-6">
-                                    <label>Nombre</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" value="{{user.displayName}}">
-                                </div>
-                            </div>
-                            <div class="row mt-4">
-                                <div class="col-md-6">
-                                    <label>Email</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>{{user.email}}</p>
-                                </div>
-                            </div>
-                            <div class="row mt-4">
-                                <div class="col-md-6">
-                                    <label>Número telefónico</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="row mt-4">
-                                <div class="col-md-6">
-                                    <label>Fecha de creación</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>{{user.metadata.createdAt | date}}</p>
-                                </div>
-                            </div>
+                            <app-profile-info [user]="user"></app-profile-info>                
                         </div>
-
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
                             <div class="row">

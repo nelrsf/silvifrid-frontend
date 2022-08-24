@@ -1,0 +1,12 @@
+<div  class="pictures-container">
+    <div *ngFor="let imgPath of pathsOfPictures">
+        <div class="card mt-2 mr-2" style="width: 10rem;">
+            <img class="card-img-top"
+                 src="{{imgPath}}" 
+                 alt="Card image cap"
+                 (click)="selectPicture(imgPath)">
+        </div>
+    </div>
+</div>
+
+

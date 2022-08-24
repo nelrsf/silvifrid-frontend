@@ -6,9 +6,9 @@ import Swal from 'sweetalert2';
 })
 export class AlertsService {
 
-  constructor() { /* TODO document why this constructor is empty */  }
+  constructor() { /* TODO document why this constructor is empty */ }
 
-  successAlert(message: string){
+  successAlert(message: string) {
     Swal.fire(
       {
         title: 'Genial!',
@@ -19,7 +19,7 @@ export class AlertsService {
     )
   }
 
-  failAlert(message: string){
+  failAlert(message: string) {
     Swal.fire(
       {
         icon: 'error',
@@ -30,7 +30,7 @@ export class AlertsService {
     )
   }
 
-  getEmailAlert(message: string){
+  getEmailAlert(message: string) {
     return Swal.fire(
       {
         title: 'Hola!',
@@ -42,4 +42,20 @@ export class AlertsService {
       }
     )
   }
+
+
+  getInputAlert(field: string, defaultValue = "") {
+    return Swal.fire({
+      title: 'Editar ' + field,
+      input: 'text',
+      inputValue: defaultValue,
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      showCancelButton: true,
+      confirmButtonText: 'Editar',
+      showLoaderOnConfirm: true,
+    })
+  }
+
 }

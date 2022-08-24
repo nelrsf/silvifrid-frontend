@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsViewComponent } from './View/Components/store/products-view/products-view.component';
 import { ProductCardComponent } from './View/Components/store/product-card/product-card.component';
-import { FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderComponent } from './View/Components/layout/header/header.component';
 import { FooterComponent } from './View/Components/layout/footer/footer.component';
 import { NavbarComponent } from './View/Components/layout/navbar/navbar.component';
@@ -19,53 +19,62 @@ import { ProductsRibbonComponent } from './View/Components/store/products-ribbon
 import { LoginComponent } from './View/Pages/login/login.component';
 import { LoginFormComponent } from './View/Components/auth/login-form/login-form.component';
 import { SignUpFormComponent } from './View/Components/auth/sign-up-form/sign-up-form.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { VideoRibbonComponent } from './View/Components/miscelaneus/video-ribbon/video-ribbon.component';
 import { PrivacyComponent } from './View/Pages/privacy/privacy.component';
 import { UserProfileComponent } from './View/Pages/user-profile/user-profile.component';
 import { CookiesPrivacyComponent } from './View/Pages/cookies-privacy/cookies-privacy.component';
 import { CookiesPopupComponent } from './View/Components/legal/cookies-popup/cookies-popup.component';
 import { ProfileInfoComponent } from './View/Components/user/profile-info/profile-info/profile-info.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { DatePipe } from '@angular/common';
+import { PicturePickerComponent } from './View/Components/miscelaneus/dialogs/picture-picker/picture-picker/picture-picker.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { AvatarPickerComponent } from './View/Components/user/avatar-picker/avatar-picker/avatar-picker.component';
+
 
 
 
 
 @NgModule({
-  entryComponents: [
- 
-  ],
-  declarations: [
-    AppComponent,
-    ProductsViewComponent,
-    ProductCardComponent,
-    HeaderComponent,
-    FooterComponent,
-    NavbarComponent,
-    BlogComponent,
-    BlogContentComponent,
-    CommentsBoxComponent,
-    StoreComponent,
-    PurchaseComponent,
-    PurchaseContentComponent,
-    ProductsRibbonComponent,
-    LoginComponent,
-    LoginFormComponent,
-    SignUpFormComponent,
-    VideoRibbonComponent,
-    PrivacyComponent,
-    UserProfileComponent,
-    CookiesPrivacyComponent,
-    CookiesPopupComponent,
-    ProfileInfoComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FontAwesomeModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        ProductsViewComponent,
+        ProductCardComponent,
+        HeaderComponent,
+        FooterComponent,
+        NavbarComponent,
+        BlogComponent,
+        BlogContentComponent,
+        CommentsBoxComponent,
+        StoreComponent,
+        PurchaseComponent,
+        PurchaseContentComponent,
+        ProductsRibbonComponent,
+        LoginComponent,
+        LoginFormComponent,
+        SignUpFormComponent,
+        VideoRibbonComponent,
+        PrivacyComponent,
+        UserProfileComponent,
+        CookiesPrivacyComponent,
+        CookiesPopupComponent,
+        ProfileInfoComponent,
+        PicturePickerComponent,
+        AvatarPickerComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FontAwesomeModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatTableModule,
+        MatDialogModule
+    ],
+    providers: [DatePipe],
+    bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
 }

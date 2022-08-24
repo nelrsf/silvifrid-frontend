@@ -1,7 +1,10 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertsService } from 'src/app/Controller/miscelaneous-services/alerts.service';
 import { AuthService } from 'src/app/Controller/Services/auth/auth.service';
+import { DisplayUserService } from 'src/app/Controller/Services/user/display-user.service';
 import { User } from 'src/app/Model/user';
+
 
 
 @Component({
@@ -23,10 +26,15 @@ export class SignUpFormComponent implements OnInit {
   @ViewChild("password2")
   password2!: ElementRef;
 
+  @Output() goToLogin = new EventEmitter<void>();
+
   user!: User;
 
+
   constructor(private authService: AuthService,
-    private alertServices: AlertsService) { }
+    private alertServices: AlertsService,
+    private displayUserService: DisplayUserService,
+    private router: Router) { }
 
   passwordMatch = false;
 
@@ -61,11 +69,16 @@ export class SignUpFormComponent implements OnInit {
 
   onSuccessEmailPasswordSigIn = (data: any) => {
     let userName = this.getFields().userName;
-    this.updateUserToDataBase(userName, data.user.email, data.user.photoURL).then(
+    let user = data.user;
+    user.displayName = userName;
+    user.photoURL = this.displayUserService.selectRandomUserImage();
+    this.updateUserToDataBase(user).then(
       this.checkEmail
     ).catch(
       this.onFailEmailPasswordSigIn
-    );
+    ).finally(() => {
+      this.goToLogin.emit();
+    });
   }
 
   onFailEmailPasswordSigIn = (error: any) => {
@@ -85,13 +98,9 @@ export class SignUpFormComponent implements OnInit {
     }
   }
 
-  updateUserToDataBase(userName: string,
-    email: string,
-    photoURL: string) {
-    this.user.displayName = userName;
-    this.user.email = email;
-    this.user.photoURL = photoURL;
-    return this.authService.setUser(this.user);
+  updateUserToDataBase(user: User) {
+    this.user = user;
+    return this.authService.setUser(user);
   }
 
   alertUserSignedIn(message: string) {
@@ -111,4 +120,5 @@ export class SignUpFormComponent implements OnInit {
       this.onFailEmailPasswordSigIn(reason)
     })
   }
+
 }

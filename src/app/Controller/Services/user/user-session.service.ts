@@ -22,7 +22,13 @@ export class UserSessionService {
   startSession(user: any){
     this.setUserProperties(user);
     this.authService.setUser(this.user);
-    this.cookieSessionService.setCookiesSession(this.user)
+    this.cookieSessionService.setCookiesSession(this.user);
+    this.cookieSessionService.setExpirationCallback(
+      ()=>{
+        this.displayUserService.closeUserSessionSubject$.next(false);
+        this.router.navigate(['/store']);
+        this.alertService.failAlert('Tu sesión ha expirado, vuelve a iniciar sesión!');
+      });
     this.displayUserService.userSubject$.next(this.user);
   }
 

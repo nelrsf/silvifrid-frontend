@@ -68,8 +68,8 @@ body{
     border-bottom:2px solid #0062cc;
 }
 .profile-work{
-    padding: 14%;
-    margin-top: -15%;
+    padding: 6%;
+    margin-top: 3%;
 }
 .profile-work p{
     font-size: 12px;
@@ -80,7 +80,7 @@ body{
 .profile-work a{
     text-decoration: none;
     color: #495057;
-    font-weight: 200;
+    font-weight: 400;
     font-size: 14px;
 }
 .profile-work ul{
@@ -94,3 +94,4 @@ body{
     font-weight: 600;
     color: #0062cc;
 }
+

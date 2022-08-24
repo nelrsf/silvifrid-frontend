@@ -35,12 +35,12 @@ export class LoginComponent implements OnInit {
   }
 
   goToLogIn() {
-    this.logOption = this.initMode.SIGNUP_MODE;
+    this.logOption = this.initMode.LOGIN_MODE;
     window.scrollTo(0, 0);
   }
 
   goToSignUp() {
-    this.logOption = this.initMode.LOGIN_MODE;
+    this.logOption = this.initMode.SIGNUP_MODE;
     window.scrollTo(0, 0);
   }
 

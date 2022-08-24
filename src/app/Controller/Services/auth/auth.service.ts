@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Iauth } from '../../Interfaces/ILoginMethods/iauth';
 import { initializeApp } from 'firebase/app';
-import { getAuth, FacebookAuthProvider, GoogleAuthProvider, signInWithPopup, TwitterAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendEmailVerification, updateProfile, sendPasswordResetEmail, onAuthStateChanged, signOut } from 'firebase/auth';
+import { getAuth, FacebookAuthProvider, GoogleAuthProvider, signInWithPopup, TwitterAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendEmailVerification, updateProfile, sendPasswordResetEmail, onAuthStateChanged, signOut, updateEmail, updatePhoneNumber, PhoneAuthCredential } from 'firebase/auth';
 import { CONFIG_APP } from 'src/app/config.json';
 import { User } from 'src/app/Model/user';
 import { Ierror } from '../../Interfaces/IAuthStateChanged/ierror';
@@ -85,10 +85,15 @@ export class AuthService implements Iauth {
   setUser(user: User) {
     return updateProfile(this.auth.currentUser,
       {
-        displayName: user.displayName,
-        photoURL: user.photoURL
+        ...(user.displayName !== "" && { displayName: user.displayName }),
+        ...(user.photoURL !== "" && { photoURL: user.photoURL})
       });
   }
+
+  setEmail(email:string){
+    return updateEmail(this.auth.currentUser, email);
+  }
+
 
   getUser() {
     return this.auth.currentUser;

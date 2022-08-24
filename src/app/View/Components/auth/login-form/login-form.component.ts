@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertsService } from 'src/app/Controller/miscelaneous-services/alerts.service';
 import { AuthService } from 'src/app/Controller/Services/auth/auth.service';
 import { UserSessionService } from 'src/app/Controller/Services/user/user-session.service';
@@ -22,7 +23,8 @@ export class LoginFormComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private alertService: AlertsService,
-              private userSessionService: UserSessionService) { }
+              private userSessionService: UserSessionService,
+              private router: Router) { }
 
   ngOnInit(): void {
     // TODO document why this method 'ngOnInit' is empty
@@ -40,6 +42,7 @@ export class LoginFormComponent implements OnInit {
         if(data.user.emailVerified){
           this.userSessionService.startSession(data.user);
           this.alertService.successAlert("Bienvenid@ " + data.user.displayName);
+          this.router.navigate(['/store']);
         }
         else{
           this.alertService.failAlert("Lo sentimos, no has verificado tu correo aún")
