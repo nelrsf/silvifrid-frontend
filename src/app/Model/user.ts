@@ -2,12 +2,17 @@ export class User {
     private _displayName!: string
     private _email!: string
     private _phoneNumber!: string;
-    private _photoURL!: string
+    private _photoURL!: string;
+    private _emailVerified!: boolean;
     private _metadata = {
         createdAt: 0
     };
     private _reloadUserInfo = {
-        photoUrl: ''
+        providerUserInfo: [
+            {
+                photoUrl: ''
+            }
+        ]
     };
 
     constructor() {
@@ -15,6 +20,14 @@ export class User {
         this._email = "";
         this._photoURL = "";
         this._phoneNumber = "";
+        this._emailVerified = false;
+    }
+
+    public get emailVerified(): boolean {
+        return this._emailVerified;
+    }
+    public set emailVerified(value: boolean) {
+        this._emailVerified = value;
     }
 
     public get reloadUserInfo() {
@@ -35,6 +48,7 @@ export class User {
     public get phoneNumber(): string {
         return this._phoneNumber;
     }
+    
     public set phoneNumber(value: string) {
         this._phoneNumber = value;
     }

@@ -10,7 +10,7 @@
 			<div class="product-price"><small>{{product.price | number: '2.'}} COP</small><br>{{product.price | number: '2.'}} COP</div>
 			<div class="product-links">
 				<a href=""><fa-icon [icon]="faHeart"></fa-icon></a>
-				<a href=""><fa-icon [icon]="faShoppingCart"></fa-icon></a>
+				<a (click)="addProductToCart()"><fa-icon [icon]="faShoppingCart"></fa-icon></a>
 			</div>
 		</div>
 	</div>

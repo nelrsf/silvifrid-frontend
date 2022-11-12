@@ -3,6 +3,11 @@ import { UserSessionService } from 'src/app/Controller/Services/user/user-sessio
 import { User } from 'src/app/Model/user';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { PicturePickerComponent } from '../../Components/miscelaneus/dialogs/picture-picker/picture-picker/picture-picker.component';
+import { Router } from '@angular/router';
+import { deleteUser } from 'firebase/auth';
+import { AuthService } from 'src/app/Controller/Services/auth/auth.service';
+import { AlertsService } from 'src/app/Controller/miscelaneous-services/alerts.service';
+
 
 @Component({
   selector: 'app-user-profile',
@@ -14,7 +19,10 @@ export class UserProfileComponent implements OnInit {
   user = new User();
 
   constructor(private userSessionService: UserSessionService,
-    private dialog: MatDialog) {
+    private dialog: MatDialog,
+    private router: Router,
+    private authService: AuthService,
+    private alertService: AlertsService) {
   }
 
   ngOnInit(): void {
@@ -30,6 +38,10 @@ export class UserProfileComponent implements OnInit {
 
     authStateChangedClass.setUserSuccessFunction((user: User) => {
       this.user = user;
+      if (user === null) {
+        this.userSessionService.closeSession();
+        this.router.navigate(['/store']);
+      }
     })
 
     authStateChangedClass.setAuthStateChangedFunctions();
@@ -44,5 +56,29 @@ export class UserProfileComponent implements OnInit {
   logOut(event: Event) {
     event.preventDefault();
     this.userSessionService.closeSession();
+  }
+
+  showDialogConfirmDleteAccount(event: Event) {
+    event.preventDefault();
+    this.alertService.getConfirmAlert().then(
+      (result) => {
+        if (result.isConfirmed) {
+          this.deleteAccount(event);
+        }
+      }).catch((reason) => {
+        this.alertService.failAlert(reason.message);
+      });
+  }
+
+  deleteAccount(_event: Event) {
+    deleteUser(this.authService.getUser()).then(
+      () => {
+        this.alertService.successAlert('Tu cuenta ha sido eliminada correctamente')
+      }
+    ).catch((error) => {
+      this.alertService.failAlert(error.message);
+    }).finally(() => {
+      this.router.navigate(['/store']);
+    });
   }
 }

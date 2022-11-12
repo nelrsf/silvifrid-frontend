@@ -19,6 +19,7 @@ export class AvatarPickerComponent implements OnInit {
   mainPicturesPath = environment.avatars_main_route;
   @Input() socialMediaPicturePath: string | undefined;
 
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: User,
     private matDialogRef: MatDialogRef<PicturePickerComponent>,
     private authService: AuthService,
@@ -30,7 +31,7 @@ export class AvatarPickerComponent implements OnInit {
 
   getPictures() {
     this.pathsOfPictures = [];
-    this.pathsOfPictures.push(this.data.reloadUserInfo.photoUrl);
+    this.pathsOfPictures.push(this.data.reloadUserInfo.providerUserInfo[0].photoUrl);
     for (let i = 1; i <= this.numberOfPictures; i++) {
       this.pathsOfPictures.push(this.mainPicturesPath + i + '.jpg');
     }

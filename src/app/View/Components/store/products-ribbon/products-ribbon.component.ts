@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { ProductControllerService } from 'src/app/Controller/Services/products/product-controller.service';
-import { Product } from 'src/app/Model/Product';
+import { Product } from 'src/app/Model/product';
 
 @Component({
   selector: 'app-products-ribbon',

@@ -19,6 +19,16 @@ export class AlertsService {
     )
   }
 
+  successHtmlAlert(html: string) {
+    Swal.fire(
+      {
+        title: 'Genial!',
+        html: html,
+        confirmButtonColor: '#3CC700'
+      }
+    )
+  }
+
   failAlert(message: string) {
     Swal.fire(
       {
@@ -30,11 +40,12 @@ export class AlertsService {
     )
   }
 
-  getEmailAlert(message: string) {
+  getEmailAlert(message: string, defaultValue = "") {
     return Swal.fire(
       {
-        title: 'Hola!',
+        title: 'Hola!, ingresa tu correo',
         input: 'email',
+        inputValue: defaultValue,
         showCancelButton: true,
         text: message,
         confirmButtonText: 'Enviar',
@@ -56,6 +67,19 @@ export class AlertsService {
       confirmButtonText: 'Editar',
       showLoaderOnConfirm: true,
     })
+  }
+
+  getConfirmAlert(){
+    return Swal.fire({
+      title: 'Estas segur@?',
+      text: "No queremos que te vayas, pero bueno :(, cuando quieras puedes volver a registrar tu cuenta, haata pronto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: 'red',
+      cancelButtonColor: 'green',
+      confirmButtonText: 'Si, eliminala!',
+      cancelButtonText: 'Quiero quedarme'
+    });
   }
 
 }

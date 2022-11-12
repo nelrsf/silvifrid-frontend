@@ -1,0 +1,19 @@
+<div *ngIf="dialogMode === 'sendVerifyCode'">
+    <div class="h4">Ingresa tu número telefónico</div>
+    <br>
+    <app-phone-input #phone_number></app-phone-input>
+    <br>
+    <div id="recaptcha-container"></div>
+    <br>
+    <button (click)="sendVerificationCode()">Enviar</button>
+</div>
+
+<div *ngIf="dialogMode === 'verifyCode'">
+    <div class="h6 mb-3">Verificación de código</div>
+    <p class="mb-3">Ingresa el código de verificación enviado a tu teléfono</p>
+    <input class="mb-3" #code_field>
+    <div>
+        <button (click)="validateCode($event)">Validar código</button>
+    </div>
+
+</div>

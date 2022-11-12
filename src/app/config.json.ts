@@ -1,3 +1,6 @@
+/**
+ * @ignore
+ */
 export const CONFIG_APP = {
     firebaseConfig : {
         apiKey: "AIzaSyAuLrWBJx-yk-L988tmvCT_oSQ0P5LtXnE",

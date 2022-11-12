@@ -1,0 +1,837 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>silvifrid-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">silvifrid-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  ProductsRibbonComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/View/Components/store/products-ribbon/products-ribbon.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-products-ribbon</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./products-ribbon.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./products-ribbon.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#faAngleLeft" >faAngleLeft</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#faAngleRight" >faAngleRight</a>
+                            </li>
+                            <li>
+                                <a href="#product" >product</a>
+                            </li>
+                            <li>
+                                <a href="#productList" >productList</a>
+                            </li>
+                            <li>
+                                <a href="#slider" >slider</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#slideRibbonLeft" >slideRibbonLeft</a>
+                            </li>
+                            <li>
+                                <a href="#slideRibbonRight" >slideRibbonRight</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(productControllerService: <a href="../injectables/ProductControllerService.html" target="_self">ProductControllerService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/View/Components/store/products-ribbon/products-ribbon.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>productControllerService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProductControllerService.html" target="_self" >ProductControllerService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/View/Components/store/products-ribbon/products-ribbon.component.ts:26</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="slideRibbonLeft"></a>
+                    <span class="name">
+                        <span ><b>slideRibbonLeft</b></span>
+                        <a href="#slideRibbonLeft"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>slideRibbonLeft()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/View/Components/store/products-ribbon/products-ribbon.component.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="slideRibbonRight"></a>
+                    <span class="name">
+                        <span ><b>slideRibbonRight</b></span>
+                        <a href="#slideRibbonRight"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>slideRibbonRight()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/View/Components/store/products-ribbon/products-ribbon.component.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="faAngleLeft"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>faAngleLeft</b></span>
+                        <a href="#faAngleLeft"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>faAngleLeft</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/View/Components/store/products-ribbon/products-ribbon.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="faAngleRight"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>faAngleRight</b></span>
+                        <a href="#faAngleRight"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>faAngleRight</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/View/Components/store/products-ribbon/products-ribbon.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="product"></a>
+                    <span class="name">
+                        <span ><b>product</b></span>
+                        <a href="#product"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Product.html" target="_self" >Product</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;product&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/View/Components/store/products-ribbon/products-ribbon.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productList"></a>
+                    <span class="name">
+                        <span ><b>productList</b></span>
+                        <a href="#productList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Product.html" target="_self" >Product[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/View/Components/store/products-ribbon/products-ribbon.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="slider"></a>
+                    <span class="name">
+                        <span ><b>slider</b></span>
+                        <a href="#slider"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;slider&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/View/Components/store/products-ribbon/products-ribbon.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { faAngleLeft, faAngleRight } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
+import { ProductControllerService } from &#x27;src/app/Controller/Services/products/product-controller.service&#x27;;
+import { Product } from &#x27;src/app/Model/product&#x27;;
+
+@Component({
+  selector: &#x27;app-products-ribbon&#x27;,
+  templateUrl: &#x27;./products-ribbon.component.html&#x27;,
+  styleUrls: [&#x27;./products-ribbon.component.css&#x27;]
+})
+export class ProductsRibbonComponent implements OnInit {
+  public faAngleLeft &#x3D; faAngleLeft;
+  public faAngleRight &#x3D; faAngleRight;
+
+  @ViewChild(&quot;slider&quot;)
+  slider!: ElementRef;
+  @ViewChild(&quot;product&quot;)
+  product!: Product;
+  productList!: Product[];
+
+
+  constructor(private productControllerService: ProductControllerService) { 
+    
+   }
+
+  ngOnInit(): void {
+    let products &#x3D; this.productControllerService.getAllProducts();
+    products.subscribe(data&#x3D;&gt;{
+      let ObjStr &#x3D; JSON.stringify(data); 
+      let ObjJson &#x3D; JSON.parse(ObjStr);
+      this.productList&#x3D;ObjJson;
+    })
+  }
+
+  slideRibbonLeft(){
+    let step: number;
+    if(screen.width&gt;700){
+      step &#x3D; 0.3*screen.width;
+    }
+    else{
+      step &#x3D; 0.8*screen.width;
+    }
+
+    this.slider.nativeElement.scrollBy({
+      left: -step,
+      behavior: &#x27;smooth&#x27;
+    });
+}
+
+slideRibbonRight(){
+  let step: number;
+  if(screen.width&gt;700){
+    step &#x3D; 0.3*screen.width;
+  }
+  else{
+    step &#x3D; 0.8*screen.width;
+  }
+
+  this.slider.nativeElement.scrollBy({
+      left: step,
+      behavior: &#x27;smooth&#x27;
+    });
+
+  }
+}
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;ribbon-container&quot;&gt;
+  &lt;div class&#x3D;&quot;left&quot; (click)&#x3D;&quot;slideRibbonLeft()&quot;&gt;
+    &lt;a &gt;
+      &lt;fa-icon class&#x3D;&quot;fa-2xl&quot; [icon]&#x3D;&quot;faAngleLeft&quot;&gt;&lt;/fa-icon&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div #slider class&#x3D;&quot;slider&quot;&gt;
+    &lt;div class&#x3D;&quot;card-div&quot; *ngFor&#x3D;&quot;let prod of productList; let i &#x3D;index&quot;&gt;
+        &lt;app-product-card  [product]&#x3D;&quot;prod&quot; cardwidth&#x3D;&quot;190px&quot;&gt;
+        &lt;/app-product-card&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;right&quot; (click)&#x3D;&quot;slideRibbonRight()&quot;&gt;
+    &lt;a &gt;
+      &lt;fa-icon class&#x3D;&quot;fa-2xl&quot; [icon]&#x3D;&quot;faAngleRight&quot;&gt;&lt;/fa-icon&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./products-ribbon.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.card-div{
+    width: fit-content;
+    margin-right: 3%;
+}
+
+.slider{
+    overflow-x: scroll;
+    height: auto;
+    width: fit-content;
+    min-width: 100%;
+    display: flex;
+    margin: 0 -2%;
+}
+
+/*@media (max-width: 300px) {
+    .card-div { width: 100%; }
+  }
+  
+  @media (max-width: 400px) and (min-width: 300px) {
+    .card-div { width: 70%; }
+  }
+
+  @media (max-width: 600px) and (min-width: 400px) {
+    .card-div { width: 60%; }
+  }
+
+  @media (max-width: 800px) and (min-width: 600px) {
+    .card-div { width: 40%; }
+  }
+
+  @media (max-width: 1000px) and (min-width: 800px) {
+    .card-div { width: 30%; }
+  }
+
+  @media (max-width: 1200px) and (min-width: 1000px) {
+    .card-div { width: 25%; }
+  }
+
+  @media (min-width: 1200px) {
+    .card-div { width: 20%; }
+  }*/
+
+::-webkit-scrollbar {
+    width: 0; 
+    background: transparent;
+}
+
+
+.left {
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 3%;
+  height: initial;
+  display: inline-flex;
+  z-index: 1;
+  justify-content: center;
+}
+
+.left a {
+  height: fit-content;
+  display: inline-flex;
+  align-self: center;
+}
+
+.left a fa-icon{
+  color: #24282cd4
+}
+
+.ribbon-container {
+  height: fit-content;
+  display: inline-flex;
+  width: 100%;
+}
+
+
+.right {
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 3%;
+  height: initial;
+  display: inline-flex;
+  z-index: 1;
+  justify-content: center;
+}
+
+.right a {
+  height: fit-content;
+  display: inline-flex;
+  align-self: center;
+  z-index: -10;
+}
+
+.right a fa-icon{
+  color: #24282cd4;
+  z-index: -10;
+}
+
+.left:hover {
+  background-color: rgba(0, 0, 0, 0.45); 
+  cursor: pointer;
+}
+
+.right:hover {
+  background-color: rgba(0, 0, 0, 0.45); 
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .left { display: none; }
+  .right { display: none; }
+  .slider {
+    margin-left: 4%;
+    margin-right: 4%;
+    min-width: 90%;
+  }
+  /*.card-div{
+    transform: scale(0.8);
+  }*/
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="ribbon-container">  <div class="left" (click)="slideRibbonLeft()">    <a >      <fa-icon class="fa-2xl" [icon]="faAngleLeft"></fa-icon>    </a>  </div>  <div #slider class="slider">    <div class="card-div" *ngFor="let prod of productList; let i =index">        <app-product-card  [product]="prod" cardwidth="190px">        </app-product-card>    </div>  </div>  <div class="right" (click)="slideRibbonRight()">    <a >      <fa-icon class="fa-2xl" [icon]="faAngleRight"></fa-icon>    </a>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AvatarPickerComponent', 'selector': 'app-avatar-picker'},{'name': 'BlogComponent', 'selector': 'app-blog'},{'name': 'BlogContentComponent', 'selector': 'app-blog-content'},{'name': 'CartComponent', 'selector': 'app-cart-component'},{'name': 'CommentsBoxComponent', 'selector': 'app-comments-box'},{'name': 'CookiesPopupComponent', 'selector': 'app-cookies-popup'},{'name': 'CookiesPrivacyComponent', 'selector': 'app-cookies-privacy'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginComponent', 'selector': 'app-register'},{'name': 'LoginFormComponent', 'selector': 'app-login-form'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PhoneDialogComponent', 'selector': 'app-phone-dialog'},{'name': 'PhoneInputComponent', 'selector': 'app-phone-input'},{'name': 'PicturePickerComponent', 'selector': 'app-picture-picker'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'ProductCardComponent', 'selector': 'app-product-card'},{'name': 'ProductsRibbonComponent', 'selector': 'app-products-ribbon'},{'name': 'ProductsViewComponent', 'selector': 'app-products-view'},{'name': 'ProfileInfoComponent', 'selector': 'app-profile-info'},{'name': 'PurchaseComponent', 'selector': 'app-purchase'},{'name': 'PurchaseContentComponent', 'selector': 'app-purchase-content'},{'name': 'SignUpFormComponent', 'selector': 'app-sign-up-form'},{'name': 'StoreComponent', 'selector': 'app-store'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'VideoRibbonComponent', 'selector': 'app-video-ribbon'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ProductsRibbonComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProductsRibbonComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

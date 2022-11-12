@@ -7,16 +7,57 @@ export class Product {
     private _price!: number;
     private _quantity!: number;
     private _images!: string[];
+    private _width!: number;
+    private _heigth!: number;
+    private _depth!: number;
+    private _weight!: number;
+    private _insuredCost!: number;
+
 
 
     constructor() {
         this.images = [""];        
     }
 
-    public get _id(): string {
-        return this._id;
+    public get insuredCost(): number {
+        return this._insuredCost;
     }
-    public set id(value: string) {
+    public set insuredCost(value: number) {
+        this._insuredCost = value;
+    }
+
+    public get weight(): number {
+        return this._weight;
+    }
+    public set weight(value: number) {
+        this._weight = value;
+    }
+
+    public get depth(): number {
+        return this._depth;
+    }
+    public set depth(value: number) {
+        this._depth = value;
+    }
+
+    public get heigth(): number {
+        return this._heigth;
+    }
+    public set heigth(value: number) {
+        this._heigth = value;
+    }
+
+    public get width(): number {
+        return this._width;
+    }
+    public set width(value: number) {
+        this._width = value;
+    }
+
+    public get _id(): string {
+        return this.__id;
+    }
+    public set _id(value: string) {
         this.__id = value;
     }
 

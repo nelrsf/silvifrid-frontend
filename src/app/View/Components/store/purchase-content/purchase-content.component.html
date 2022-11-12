@@ -1,11 +1,11 @@
 <div class="product">
 	<div class="product__photo">
-		<div class="photo-container">
+		<div class="photo-container" >
 			<div class="photo-main">
 				<div class="photo-thumb">
 					<div class="controls">
-						<i class="material-icons">share</i>
-						<i class="material-icons">favorite_border</i>
+						<em class="material-icons">share</em>
+						<em class="material-icons">favorite_border</em>
 					</div>
 					<img src="{{product.images[indxImg]}}" alt="">
 				</div>
@@ -17,7 +17,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="product__info card">
+    <div class="product__info card">
 		<div class="title">
 			<h1>{{product.name}}</h1>
 			<span>COD: {{product._id | slice:-4 | uppercase}}</span>
@@ -28,11 +28,11 @@
 		<span class="purchase-titles">CANTIDAD</span>
 		<div class="quantity">
 			<div>
-				<input class="mt-2" type="number" value="1">
-				<button>
+				<input class="mt-2" type="number" (change)="checkNegativeQuantity($event)" [(ngModel)]="productQuantity">
+				<button (click)="addQuantity()">
 					<fa-icon [icon]="faPlus"></fa-icon>
 				</button>
-				<button>
+				<button (click)="reduceQuantity()">
 					<fa-icon [icon]="faMinus"></fa-icon>
 				</button>
 			</div>
@@ -43,14 +43,14 @@
 				<li *ngFor="let b of product.benefits">{{b}}</li>
 			</ul>
 		</div>
-		<button class="buy--btn">AÑADIR AL CARRITO</button>
+		<button class="buy--btn" (click)="addProductToCart()">AÑADIR AL CARRITO</button>
 		<div class="card product-description">
 			<div class="h6 mb-5 mt-3">DESCRIPCIÓN</div>
             <span>{{product.description}}</span>
 		</div>
 	</div>
-	<div class="video-container">
+	<!-- <div class="video-container">
 		<app-video-ribbon></app-video-ribbon>
-	</div>
+	</div> -->
 </div>
 

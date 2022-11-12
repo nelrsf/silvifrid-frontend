@@ -1,6 +1,6 @@
 <div class="main-signup">
   <div class="signup">
-    <h4>Inicia sesión con tus redes sociales</h4>
+    <h2>Inicia sesión con tus redes sociales</h2>
       <div class="signup-connect">
         <a (click)="fbLogin()" class="btn btn-social btn-facebook"><fa-icon [icon]="faFacebook"></fa-icon></a>
         <a (click)="twLogin()" class="btn btn-social btn-twitter"><fa-icon [icon]="faTwitter"></fa-icon></a>
@@ -17,6 +17,7 @@
           <app-login-form></app-login-form>
           <br>
           <a (click)="goToSignUp()">¿Aún no tienes cuenta? Registrate</a>
+          <br>
           <br>
           <a (click)="rememberPassword()">¿No recuerdas tu contraseña? Recuperala</a>
         </div>

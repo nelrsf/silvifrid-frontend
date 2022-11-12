@@ -10,6 +10,10 @@ td p {
   margin: 0;
 }
 
+td a {
+  cursor: pointer;
+}
+
 .action-link{
   color: #007bff!important;
 }

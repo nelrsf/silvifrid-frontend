@@ -18,7 +18,7 @@ export class DisplayUserService {
   }
 
 
-  getRandomInt(max: number) {
+  getRandomInt(max: number): number {
     return Math.floor(Math.random() * max);
   }
 

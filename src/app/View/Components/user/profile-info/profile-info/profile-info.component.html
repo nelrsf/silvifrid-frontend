@@ -10,7 +10,9 @@
   <ng-container matColumnDef="value">
     <th mat-header-cell *matHeaderCellDef> Valor </th>
     <td mat-cell class="text-dark  cell-border" *matCellDef="let element">
-      <p class="ml-2"> {{element.value}}</p>
+      <p class="ml-2">{{element.value}}</p>
+      <p *ngIf="element.field==='Email' && !user.emailVerified" class="text-danger ml-2"> No verificado</p>
+      
     </td>
   </ng-container>
 
@@ -18,8 +20,21 @@
   <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef> Accion </th>
     <td class="cell-border" mat-cell *matCellDef="let element">
-      <a class="action-link ml-2" (click)="getPupUpEditField(element)">
+      <a  *ngIf="element.action.edit" 
+          class="action-link ml-2 " 
+          (click)="getPupUpEditField(element)" 
+          data-toggle="tooltip" 
+          data-placement="bottom" 
+          title="Edita este campo">
         <fa-icon [icon]="faEdit"></fa-icon>
+      </a>
+      <a  *ngIf="element.action.check" 
+          class="action-link ml-2" 
+          (click)="getPupUpCheckField(element)"
+          data-toggle="tooltip" 
+          data-placement="bottom" 
+          title="Verifica este campo">
+        <fa-icon [icon]="faCheck"></fa-icon>
       </a>
     </td>
   </ng-container>
@@ -27,3 +42,5 @@
 
   <tr class="border-top mb-1 bg-light" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+

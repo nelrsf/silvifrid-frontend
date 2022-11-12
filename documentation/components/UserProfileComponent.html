@@ -1,0 +1,1073 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>silvifrid-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">silvifrid-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  UserProfileComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/View/Pages/user-profile/user-profile.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-user-profile</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./user-profile.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./user-profile.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#user" >user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#deleteAccount" >deleteAccount</a>
+                            </li>
+                            <li>
+                                <a href="#logOut" >logOut</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openImagePickerDialog" >openImagePickerDialog</a>
+                            </li>
+                            <li>
+                                <a href="#setUserOnStateAuthChanged" >setUserOnStateAuthChanged</a>
+                            </li>
+                            <li>
+                                <a href="#showDialogConfirmDleteAccount" >showDialogConfirmDleteAccount</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(userSessionService: <a href="../injectables/UserSessionService.html" target="_self">UserSessionService</a>, dialog: MatDialog, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, alertService: <a href="../injectables/AlertsService.html" target="_self">AlertsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/View/Pages/user-profile/user-profile.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>userSessionService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserSessionService.html" target="_self" >UserSessionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>alertService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AlertsService.html" target="_self" >AlertsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteAccount"></a>
+                    <span class="name">
+                        <span ><b>deleteAccount</b></span>
+                        <a href="#deleteAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteAccount(_event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/app/View/Pages/user-profile/user-profile.component.ts:73</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_event</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logOut"></a>
+                    <span class="name">
+                        <span ><b>logOut</b></span>
+                        <a href="#logOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logOut(event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/View/Pages/user-profile/user-profile.component.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/View/Pages/user-profile/user-profile.component.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openImagePickerDialog"></a>
+                    <span class="name">
+                        <span ><b>openImagePickerDialog</b></span>
+                        <a href="#openImagePickerDialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openImagePickerDialog()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/View/Pages/user-profile/user-profile.component.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setUserOnStateAuthChanged"></a>
+                    <span class="name">
+                        <span ><b>setUserOnStateAuthChanged</b></span>
+                        <a href="#setUserOnStateAuthChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setUserOnStateAuthChanged()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/View/Pages/user-profile/user-profile.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showDialogConfirmDleteAccount"></a>
+                    <span class="name">
+                        <span ><b>showDialogConfirmDleteAccount</b></span>
+                        <a href="#showDialogConfirmDleteAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showDialogConfirmDleteAccount(event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/View/Pages/user-profile/user-profile.component.ts:61</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new User()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/View/Pages/user-profile/user-profile.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { UserSessionService } from &#x27;src/app/Controller/Services/user/user-session.service&#x27;;
+import { User } from &#x27;src/app/Model/user&#x27;;
+import { MatDialog, MatDialogConfig } from &#x27;@angular/material/dialog&#x27;;
+import { PicturePickerComponent } from &#x27;../../Components/miscelaneus/dialogs/picture-picker/picture-picker/picture-picker.component&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { deleteUser } from &#x27;firebase/auth&#x27;;
+import { AuthService } from &#x27;src/app/Controller/Services/auth/auth.service&#x27;;
+import { AlertsService } from &#x27;src/app/Controller/miscelaneous-services/alerts.service&#x27;;
+
+
+@Component({
+  selector: &#x27;app-user-profile&#x27;,
+  templateUrl: &#x27;./user-profile.component.html&#x27;,
+  styleUrls: [&#x27;./user-profile.component.css&#x27;]
+})
+export class UserProfileComponent implements OnInit {
+
+  user &#x3D; new User();
+
+  constructor(private userSessionService: UserSessionService,
+    private dialog: MatDialog,
+    private router: Router,
+    private authService: AuthService,
+    private alertService: AlertsService) {
+  }
+
+  ngOnInit(): void {
+    this.setUserOnStateAuthChanged();
+  }
+
+  setUserOnStateAuthChanged() {
+    let authStateChangedClass &#x3D; this.userSessionService.getUserOnStateAuthChangedClass();
+
+    authStateChangedClass.setUserErrorFunction((error: any) &#x3D;&gt; {
+      console.log(error);
+    })
+
+    authStateChangedClass.setUserSuccessFunction((user: User) &#x3D;&gt; {
+      this.user &#x3D; user;
+      if (user &#x3D;&#x3D;&#x3D; null) {
+        this.userSessionService.closeSession();
+        this.router.navigate([&#x27;/store&#x27;]);
+      }
+    })
+
+    authStateChangedClass.setAuthStateChangedFunctions();
+  }
+
+  openImagePickerDialog() {
+    let matDialogConfig &#x3D; new MatDialogConfig();
+    matDialogConfig.data &#x3D; this.user;
+    this.dialog.open(PicturePickerComponent, matDialogConfig);
+  }
+
+  logOut(event: Event) {
+    event.preventDefault();
+    this.userSessionService.closeSession();
+  }
+
+  showDialogConfirmDleteAccount(event: Event) {
+    event.preventDefault();
+    this.alertService.getConfirmAlert().then(
+      (result) &#x3D;&gt; {
+        if (result.isConfirmed) {
+          this.deleteAccount(event);
+        }
+      }).catch((reason) &#x3D;&gt; {
+        this.alertService.failAlert(reason.message);
+      });
+  }
+
+  deleteAccount(_event: Event) {
+    deleteUser(this.authService.getUser()).then(
+      () &#x3D;&gt; {
+        this.alertService.successAlert(&#x27;Tu cuenta ha sido eliminada correctamente&#x27;)
+      }
+    ).catch((error) &#x3D;&gt; {
+      this.alertService.failAlert(error.message);
+    }).finally(() &#x3D;&gt; {
+      this.router.navigate([&#x27;/store&#x27;]);
+    });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;link href&#x3D;&quot;//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css&quot; rel&#x3D;&quot;stylesheet&quot; id&#x3D;&quot;bootstrap-css&quot;&gt;
+&lt;script src&#x3D;&quot;//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;!------ Include the above in your HEAD tag ----------&gt;
+&lt;div class&#x3D;&quot;container emp-profile&quot;&gt;
+    &lt;form method&#x3D;&quot;post&quot;&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                &lt;div class&#x3D;&quot;profile-img&quot;&gt;
+                    &lt;img src&#x3D;&quot;{{user.photoURL}}&quot; alt&#x3D;&quot;&quot; /&gt;
+                    &lt;div (click)&#x3D;&quot;openImagePickerDialog()&quot; class&#x3D;&quot;file btn btn-lg btn-primary&quot;&gt;
+                        Cambiar imagen
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;profile-work&quot;&gt;
+                    &lt;h4&gt;ACCIONES&lt;/h4&gt;
+                    &lt;ul&gt;
+                        &lt;li class&#x3D;&quot;mb-2&quot;&gt;
+                            &lt;a (click)&#x3D;&quot;logOut($event)&quot; class&#x3D;&quot;profile-edit-btn&quot;&gt;
+                                Cerrar Sesión
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li  class&#x3D;&quot;mb-2&quot;&gt;
+                            &lt;a (click)&#x3D;&quot;showDialogConfirmDleteAccount($event)&quot; class&#x3D;&quot;profile-edit-btn&quot;&gt;
+                                Eliminar cuenta
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+
+                &lt;div class&#x3D;&quot;mb-5&quot;&gt;
+                    &lt;div class&#x3D;&quot;profile-head ml-3&quot;&gt;
+                        &lt;h2&gt;
+                            {{user.displayName}}
+                        &lt;/h2&gt;
+                        &lt;h3&gt;
+                            {{user.email}}
+                        &lt;/h3&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div&gt;
+                    &lt;ul class&#x3D;&quot;nav nav-tabs mb-4&quot; id&#x3D;&quot;myTab&quot; role&#x3D;&quot;tablist&quot;&gt;
+                        &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                            &lt;a class&#x3D;&quot;nav-link active&quot; id&#x3D;&quot;home-tab&quot; data-toggle&#x3D;&quot;tab&quot; href&#x3D;&quot;#home&quot; role&#x3D;&quot;tab&quot;
+                                aria-controls&#x3D;&quot;home&quot; aria-selected&#x3D;&quot;true&quot;&gt;Información&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                            &lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;profile-tab&quot; data-toggle&#x3D;&quot;tab&quot; href&#x3D;&quot;#profile&quot; role&#x3D;&quot;tab&quot;
+                                aria-controls&#x3D;&quot;profile&quot; aria-selected&#x3D;&quot;false&quot;&gt;Mis compras&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                            &lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;address-tab&quot; data-toggle&#x3D;&quot;tab&quot; href&#x3D;&quot;#address&quot; role&#x3D;&quot;tab&quot;
+                                aria-controls&#x3D;&quot;address&quot; aria-selected&#x3D;&quot;false&quot;&gt;Direcciones&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+
+                    &lt;div class&#x3D;&quot;tab-content profile-tab&quot; id&#x3D;&quot;myTabContent&quot;&gt;
+
+                        &lt;div class&#x3D;&quot;tab-pane fade show active&quot; id&#x3D;&quot;home&quot; role&#x3D;&quot;tabpanel&quot; aria-labelledby&#x3D;&quot;home-tab&quot;&gt;
+                            &lt;app-profile-info [user]&#x3D;&quot;user&quot;&gt;&lt;/app-profile-info&gt;                
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;tab-pane fade&quot; id&#x3D;&quot;profile&quot; role&#x3D;&quot;tabpanel&quot; aria-labelledby&#x3D;&quot;profile-tab&quot;&gt;
+
+                            &lt;div class&#x3D;&quot;row&quot;&gt;
+                                &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                    &lt;label&gt;Experience&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                    &lt;p&gt;Expert&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;row&quot;&gt;
+                                &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                    &lt;label&gt;Hourly Rate&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                    &lt;p&gt;10$/hr&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;row&quot;&gt;
+                                &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                    &lt;label&gt;Total Projects&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                    &lt;p&gt;230&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;row&quot;&gt;
+                                &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                    &lt;label&gt;English Level&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                    &lt;p&gt;Expert&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;row&quot;&gt;
+                                &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                    &lt;label&gt;Availability&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                    &lt;p&gt;6 months&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;row&quot;&gt;
+                                &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                                    &lt;label&gt;Your Bio&lt;/label&gt;&lt;br /&gt;
+                                    &lt;p&gt;Your detail description&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class&#x3D;&quot;tab-pane fade&quot; id&#x3D;&quot;address&quot; role&#x3D;&quot;tabpanel&quot; aria-labelledby&#x3D;&quot;address-tab&quot;&gt;
+                            Direcciones
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./user-profile.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">body{
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+}
+.emp-profile{
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+.profile-img{
+    text-align: center;
+}
+.profile-img img{
+    width: 70%;
+    height: 100%;
+}
+.profile-img .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -20%;
+    width: 70%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+}
+.profile-img .file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+.profile-head h5{
+    color: #333;
+}
+.profile-head h6{
+    color: #0062cc;
+}
+.profile-edit-btn{
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 200;
+    color: #6c757d;
+    cursor: pointer;
+}
+.proile-rating{
+    font-size: 12px;
+    color: #818182;
+    margin-top: 5%;
+}
+.proile-rating span{
+    color: #495057;
+    font-size: 15px;
+    font-weight: 600;
+}
+.profile-head .nav-tabs{
+    margin-bottom:5%;
+}
+.profile-head .nav-tabs .nav-link{
+    font-weight:600;
+    border: none;
+}
+.profile-head .nav-tabs .nav-link.active{
+    border: none;
+    border-bottom:2px solid #0062cc;
+}
+.profile-work{
+    padding: 6%;
+    margin-top: 3%;
+}
+.profile-work p{
+    font-size: 12px;
+    color: #818182;
+    font-weight: 600;
+    margin-top: 10%;
+}
+.profile-work a{
+    text-decoration: none;
+    color: #495057;
+    font-weight: 400;
+    font-size: 14px;
+}
+.profile-work ul{
+    list-style: none;
+    padding: 0;
+}
+.profile-tab label{
+    font-weight: 600;
+}
+.profile-tab p{
+    font-weight: 600;
+    color: #0062cc;
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"><script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><!------ Include the above in your HEAD tag ----------><div class="container emp-profile">    <form method="post">        <div class="row">            <div class="col-md-4">                <div class="profile-img">                    <img src="{{user.photoURL}}" alt="" />                    <div (click)="openImagePickerDialog()" class="file btn btn-lg btn-primary">                        Cambiar imagen                    </div>                </div>                <div class="profile-work">                    <h4>ACCIONES</h4>                    <ul>                        <li class="mb-2">                            <a (click)="logOut($event)" class="profile-edit-btn">                                Cerrar Sesión                            </a>                        </li>                        <li  class="mb-2">                            <a (click)="showDialogConfirmDleteAccount($event)" class="profile-edit-btn">                                Eliminar cuenta                            </a>                        </li>                    </ul>                </div>            </div>            <div class="col-md-8">                <div class="mb-5">                    <div class="profile-head ml-3">                        <h2>                            {{user.displayName}}                        </h2>                        <h3>                            {{user.email}}                        </h3>                    </div>                </div>                <div>                    <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">                        <li class="nav-item">                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"                                aria-controls="home" aria-selected="true">Información</a>                        </li>                        <li class="nav-item">                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"                                aria-controls="profile" aria-selected="false">Mis compras</a>                        </li>                        <li class="nav-item">                            <a class="nav-link" id="address-tab" data-toggle="tab" href="#address" role="tab"                                aria-controls="address" aria-selected="false">Direcciones</a>                        </li>                    </ul>                    <div class="tab-content profile-tab" id="myTabContent">                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">                            <app-profile-info [user]="user"></app-profile-info>                                        </div>                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">                            <div class="row">                                <div class="col-md-6">                                    <label>Experience</label>                                </div>                                <div class="col-md-6">                                    <p>Expert</p>                                </div>                            </div>                            <div class="row">                                <div class="col-md-6">                                    <label>Hourly Rate</label>                                </div>                                <div class="col-md-6">                                    <p>10$/hr</p>                                </div>                            </div>                            <div class="row">                                <div class="col-md-6">                                    <label>Total Projects</label>                                </div>                                <div class="col-md-6">                                    <p>230</p>                                </div>                            </div>                            <div class="row">                                <div class="col-md-6">                                    <label>English Level</label>                                </div>                                <div class="col-md-6">                                    <p>Expert</p>                                </div>                            </div>                            <div class="row">                                <div class="col-md-6">                                    <label>Availability</label>                                </div>                                <div class="col-md-6">                                    <p>6 months</p>                                </div>                            </div>                            <div class="row">                                <div class="col-md-12">                                    <label>Your Bio</label><br />                                    <p>Your detail description</p>                                </div>                            </div>                        </div>                        <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab">                            Direcciones                        </div>                    </div>                </div>            </div>        </div>    </form></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AvatarPickerComponent', 'selector': 'app-avatar-picker'},{'name': 'BlogComponent', 'selector': 'app-blog'},{'name': 'BlogContentComponent', 'selector': 'app-blog-content'},{'name': 'CartComponent', 'selector': 'app-cart-component'},{'name': 'CommentsBoxComponent', 'selector': 'app-comments-box'},{'name': 'CookiesPopupComponent', 'selector': 'app-cookies-popup'},{'name': 'CookiesPrivacyComponent', 'selector': 'app-cookies-privacy'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginComponent', 'selector': 'app-register'},{'name': 'LoginFormComponent', 'selector': 'app-login-form'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PhoneDialogComponent', 'selector': 'app-phone-dialog'},{'name': 'PhoneInputComponent', 'selector': 'app-phone-input'},{'name': 'PicturePickerComponent', 'selector': 'app-picture-picker'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'},{'name': 'ProductCardComponent', 'selector': 'app-product-card'},{'name': 'ProductsRibbonComponent', 'selector': 'app-products-ribbon'},{'name': 'ProductsViewComponent', 'selector': 'app-products-view'},{'name': 'ProfileInfoComponent', 'selector': 'app-profile-info'},{'name': 'PurchaseComponent', 'selector': 'app-purchase'},{'name': 'PurchaseContentComponent', 'selector': 'app-purchase-content'},{'name': 'SignUpFormComponent', 'selector': 'app-sign-up-form'},{'name': 'StoreComponent', 'selector': 'app-store'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'VideoRibbonComponent', 'selector': 'app-video-ribbon'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'UserProfileComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserProfileComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

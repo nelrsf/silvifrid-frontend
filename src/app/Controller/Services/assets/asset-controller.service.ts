@@ -11,7 +11,7 @@ export class AssetControllerService implements Iassets{
 
   constructor(private http: HttpClient) { }
 
-  private url:string = environment.backend_url;
+  private url:string = environment.api_catalog_url;
 
   public getAllAssets(): Observable<Object>{
       return this.http.get(this.url+"/getassets");

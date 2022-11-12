@@ -1,0 +1,69 @@
+<div class="card mt-3">
+    <div class="row">
+        <div class="col-md-8 cart">
+            <div class="title">
+                <div class="row">
+                    <div class="col">
+                        <h4><b>Carrito de compras</b></h4>
+                    </div>
+                    <div class="col align-self-center text-right text-muted">{{cart?.products?.length}} items</div>
+                </div>
+            </div>
+
+            <div class="row border-top border-bottom" *ngFor="let productQ of cart?.products; let i = index">
+                <div class="row main align-items-center">
+                    <div class="col-2 product-image" (click)="navigateToProduct(productQ.product._id)"><img
+                            class="img-fluid" src="{{productQ.product.images[0]}}"></div>
+                    <div class="col-4">
+                        <a (click)="navigateToProduct(productQ.product._id)"
+                            class="row product-name">{{productQ.product.name}}</a>
+                    </div>
+                    <div class="col-3 quantity-panel">
+                        <a (click)="reduceItemQuantity(i)" class="change-quantity">-</a>
+                        <input class="border input-quantity" type="number" [value]="productQ.quantity"
+                            (keyup)="changeQuantity($event, i)">
+                        <a (click)="addItemQuantity(i)" class="change-quantity">+</a>
+                    </div>
+                    <div class="col currency-panel">COP {{productQ.product.price | number: '2.'}} <span (click)="deleteItem(i)"
+                            class="close">&#10005;</span></div>
+                </div>
+            </div>
+
+            <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Regresar a la tienda</span>
+            </div>
+        </div>
+        <div class="col-md-4 summary">
+            <div>
+                <h5><b>Resumen</b></h5>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col" style="padding-left:0;">TOTAL</div>
+                <div class="col text-right">COP {{cart?.getTotalPrice() | number: '2.'}}</div>
+            </div>
+            <form>
+                <p>CIUDAD</p>
+
+                <input matInput placeholder="Ingresa tu ciudad" aria-label="State" [matAutocomplete]="auto"
+                    [formControl]="cityControl">
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelectionChange($event)">
+                    <mat-option *ngFor="let city of filteredCities | async" [value]="city.NombreCiudad"
+                        [id]="city.IdCiudad.toString()">
+                        <span>{{ city.NombreCiudad }}</span> |
+                    </mat-option>
+                </mat-autocomplete>
+                <div class="courier-cost">
+                    <p>COSTO DE ENVÍO</p>
+                    <mat-spinner *ngIf="isLoadingCourierPrice" [color]="spinnerColor" [diameter]="20"></mat-spinner>
+                    <p *ngIf="!isLoadingCourierPrice">COP {{ courierCost  | number: '2.' }}</p>
+                </div>
+            </form>
+            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                <div class="col">TOTAL COMPRA</div>
+                <div class="col text-right">COP {{getTotalCostPlusCourier()  | number: '2.'}}</div>
+            </div>
+            <button class="btn">REALIZAR PAGO</button>
+        </div>
+    </div>
+
+</div>
