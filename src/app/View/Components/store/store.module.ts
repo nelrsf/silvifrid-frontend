@@ -5,12 +5,13 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { PurchaseContentComponent } from './purchase-content/purchase-content.component';
 import { ProductsRibbonComponent } from './products-ribbon/products-ribbon.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { StoreComponent } from '../../Pages/store/store.component';
 import { PurchaseComponent } from '../../Pages/purchase/purchase.component';
 import { LayoutModule } from '../layout/layout.module';
 import { MiscelaneusModule } from '../miscelaneus/miscelaneus.module';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -22,14 +23,16 @@ import { MiscelaneusModule } from '../miscelaneus/miscelaneus.module';
     PurchaseContentComponent,
     ProductsRibbonComponent,
     StoreComponent,
-    PurchaseComponent,
+    PurchaseComponent
   ],
   imports: [
     CommonModule,
     FontAwesomeModule,   
     FormsModule,
     LayoutModule,
-    MiscelaneusModule
+    MiscelaneusModule,
+    MatProgressBarModule,
+    MatPaginatorModule
   ],
   exports: [
     ProductsViewComponent,

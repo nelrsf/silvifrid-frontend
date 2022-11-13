@@ -186,3 +186,11 @@ input[type=number]::-webkit-outer-spin-button {
     display: inline-flex;
     justify-content: space-between;
 }
+
+.loading-cities{
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    font-style: italic;
+    color: gray;
+}

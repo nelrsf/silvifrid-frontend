@@ -26,3 +26,7 @@
 @media (min-width: 1200px) {
     .cards { grid-template-columns: repeat(4, 1fr); }
   }
+
+.proggress-bar {
+  padding: 0% 3%;
+}

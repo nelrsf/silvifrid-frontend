@@ -3,6 +3,7 @@ import { faSearch, faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import { CookiesSessionService } from 'src/app/Controller/Cookies/cookies-session.service';
 import { DisplayUserService } from 'src/app/Controller/Services/user/display-user.service';
 import { User } from 'src/app/Model/user';
+import { ProductsViewService } from '../../store/products-view/products-view.service';
 
 @Component({
   selector: 'app-navbar',
@@ -25,7 +26,8 @@ export class NavbarComponent implements OnInit {
 
 
   constructor(private displayUserService: DisplayUserService,
-              private cookie: CookiesSessionService) { 
+              private cookie: CookiesSessionService,
+              private productsViewService: ProductsViewService) { 
     this.user = new User();
   }
 
@@ -68,6 +70,11 @@ export class NavbarComponent implements OnInit {
       this.user.displayName = cookies.displayName;
       this.user.photoURL = cookies.photoURL;
     }
+  }
+
+  filterProducts(event: any){
+    let value = event.target.value;
+    this.productsViewService.applyProductsFilter.next(value);
   }
 
 }

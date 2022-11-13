@@ -1,40 +1,41 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <div class="social-media" *ngIf="displayUser">
-      <img src="{{user.photoURL}}" alt="user image">
-      <div class="user-description">
-        <p>Hola</p>
-        <p>{{user.displayName}}</p>
-      </div>
+  <div class="social-media" *ngIf="displayUser">
+    <img src="{{user.photoURL}}" alt="user image">
+    <div class="user-description">
+      <p>Hola</p>
+      <p>{{user.displayName}}</p>
     </div>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item" *ngIf="!displayUser">
-          <a (click)="collapse($event)" class="nav-link" routerLink="/login">{{logIn}}</a>
-        </li>
-        <li class="nav-item" *ngIf="displayUser">
-          <a (click)="collapse($event)" class="nav-link" routerLink="/user-profile">{{account}}</a>
-        </li>
-        <li class="nav-item">
-          <a (click)="collapse($event)" class="nav-link" routerLink="/blog">{{blog}}</a>
-        </li>
-        <li class="nav-item">
-          <a (click)="collapse($event)" class="nav-link" routerLink="/store">{{store}}</a>
-        </li>
-        <li class="nav-item">
-          <a (click)="collapse($event)" class="nav-link  font-weight-bold" routerLink="/cart"><fa-icon [icon]="faShoppingCart"></fa-icon></a>
-        </li>
-      </ul>
+  </div>
 
-     
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder={{searchPlaceholder}} aria-label="Search">
-        <button class="btn  search-button my-2 my-sm-0" type="submit"><span><fa-icon [icon]="faSearch"></fa-icon></span></button>
-      </form>
-    </div>
-  </nav>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" *ngIf="!displayUser">
+        <a (click)="collapse($event)" class="nav-link" routerLink="/login">{{logIn}}</a>
+      </li>
+      <li class="nav-item" *ngIf="displayUser">
+        <a (click)="collapse($event)" class="nav-link" routerLink="/user-profile">{{account}}</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="collapse($event)" class="nav-link" routerLink="/blog">{{blog}}</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="collapse($event)" class="nav-link" routerLink="/store">{{store}}</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="collapse($event)" class="nav-link  font-weight-bold" routerLink="/cart">
+          <fa-icon [icon]="faShoppingCart"></fa-icon>
+        </a>
+      </li>
+    </ul>
 
+
+    <form class="form-inline my-2 my-lg-0">
+      <input matInput class="form-control mr-sm-2" placeholder = {{searchPlaceholder}} (keyup)="filterProducts($event)">
+    </form>
+  </div>
+</nav>

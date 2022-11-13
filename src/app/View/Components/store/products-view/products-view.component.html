@@ -1,7 +1,12 @@
+<div class="proggress-bar" *ngIf="productList.length === 0">
+    <mat-progress-bar mode="query"></mat-progress-bar>
+</div>
+
 <div class="cards">
-    <div class="grid-cell" *ngFor="let prod of productList; let i =index">
+    <div class="grid-cell" *ngFor="let prod of dataObservable | async">
         <app-product-card [product]="prod" cardwidth="250px">
         </app-product-card>
     </div>
 </div>
-
+<mat-paginator [length]="productList.length" [pageSize]="8">
+</mat-paginator>

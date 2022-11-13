@@ -43,9 +43,12 @@
             </div>
             <form>
                 <p>CIUDAD</p>
+                <div class="loading-cities" *ngIf="cities.length === 0">
+                    <mat-spinner class="mr-2" [color]="spinnerColor" [diameter]="15" [color]="'primary'"></mat-spinner> Cargando ciudades...
+                </div>
 
-                <input matInput placeholder="Ingresa tu ciudad" aria-label="State" [matAutocomplete]="auto"
-                    [formControl]="cityControl">
+                <input matInput placeholder="Ingresa tu ciudad" [matAutocomplete]="auto"
+                    [formControl]="cityControl" *ngIf="cities.length !== 0">
                 <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelectionChange($event)">
                     <mat-option *ngFor="let city of filteredCities | async" [value]="city.NombreCiudad"
                         [id]="city.IdCiudad.toString()">
@@ -54,7 +57,7 @@
                 </mat-autocomplete>
                 <div class="courier-cost">
                     <p>COSTO DE ENVÍO</p>
-                    <mat-spinner *ngIf="isLoadingCourierPrice" [color]="spinnerColor" [diameter]="20"></mat-spinner>
+                    <mat-spinner *ngIf="isLoadingCourierPrice" [color]="spinnerColor" [diameter]="20" [color]="'primary'"></mat-spinner>
                     <p *ngIf="!isLoadingCourierPrice">COP {{ courierCost  | number: '2.' }}</p>
                 </div>
             </form>
