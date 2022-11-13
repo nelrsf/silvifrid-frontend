@@ -35,7 +35,7 @@
 
 
     <form class="form-inline my-2 my-lg-0">
-      <input matInput class="form-control mr-sm-2" placeholder = {{searchPlaceholder}} (keyup)="filterProducts($event)">
+      <input matInput class="form-control mr-sm-2" placeholder = {{searchPlaceholder}} (keyup)="filterProducts($event)" (keydown)="keydownHandler($event)">
     </form>
   </div>
 </nav>

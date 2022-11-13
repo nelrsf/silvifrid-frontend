@@ -1,5 +1,5 @@
-import { Component, OnInit} from '@angular/core';
-import { faSearch, faShoppingCart} from '@fortawesome/free-solid-svg-icons';
+import { Component, OnInit } from '@angular/core';
+import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { CookiesSessionService } from 'src/app/Controller/Cookies/cookies-session.service';
 import { DisplayUserService } from 'src/app/Controller/Services/user/display-user.service';
 import { User } from 'src/app/Model/user';
@@ -14,20 +14,20 @@ export class NavbarComponent implements OnInit {
 
   faSearch = faSearch;
   faShoppingCart = faShoppingCart;
-  
-  logIn="Iniciar Sesión";
-  account="Mi Cuenta";
-  blog="Blog"
-  store="Tienda"
-  searchPlaceholder="Buscar";
+
+  logIn = "Iniciar Sesión";
+  account = "Mi Cuenta";
+  blog = "Blog"
+  store = "Tienda"
+  searchPlaceholder = "Buscar";
 
   displayUser = false;
   user!: User;
 
 
   constructor(private displayUserService: DisplayUserService,
-              private cookie: CookiesSessionService,
-              private productsViewService: ProductsViewService) { 
+    private cookie: CookiesSessionService,
+    private productsViewService: ProductsViewService) {
     this.user = new User();
   }
 
@@ -37,34 +37,34 @@ export class NavbarComponent implements OnInit {
     this.startSessionFromCookies();
   }
 
-  collapse($event: any){
+  collapse($event: any) {
     let tarElement = $event.target;
     tarElement.parentNode.parentNode.parentNode.classList.remove('show');
   }
 
-  setUserSessionSubject(){
-    this.displayUserService.userSubject$.subscribe(user=>{
+  setUserSessionSubject() {
+    this.displayUserService.userSubject$.subscribe(user => {
       this.user = user;
-      if(user!==undefined){
+      if (user !== undefined) {
         this.displayUser = true;
-      }else{
+      } else {
         this.displayUser = false;
       }
     })
   }
 
-  setCloseSessionSubject(){
+  setCloseSessionSubject() {
     this.displayUserService.closeUserSessionSubject$.subscribe(
-      (input)=>{
+      (input) => {
         this.displayUser = input;
       }
     )
   }
 
-  startSessionFromCookies(){
+  startSessionFromCookies() {
     let cookies = this.cookie.getCookiesSession();
-    let condition = cookies.email!=="" || cookies.displayName!=="";
-    if(condition){
+    let condition = cookies.email !== "" || cookies.displayName !== "";
+    if (condition) {
       this.displayUser = true;
       this.user.email = cookies.email;
       this.user.displayName = cookies.displayName;
@@ -72,9 +72,16 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  filterProducts(event: any){
+  filterProducts(event: any) {
+    event.preventDefault();
     let value = event.target.value;
     this.productsViewService.applyProductsFilter.next(value);
+  }
+
+  keydownHandler(event: any) {
+    if(event.key === 'Enter'){
+      event.preventDefault();
+    }
   }
 
 }
