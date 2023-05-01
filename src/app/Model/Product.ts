@@ -1,12 +1,12 @@
 export class Product {
     private __id!: string;
-    private _name!: string;
-    private _description!: string;
-    private _category!: string;
-    private _benefits!: string[];
-    private _price!: number;
-    private _quantity!: number;
-    private _images!: string[];
+    private _nombre!: string;
+    private _descripcion!: string;
+    private _categoria!: string;
+    private _beneficios!: string[];
+    private _precio!: number;
+    private _cantidad!: number;
+    private _imagenes!: string[];
     private _width!: number;
     private _heigth!: number;
     private _depth!: number;
@@ -62,60 +62,60 @@ export class Product {
     }
 
     public get name(): string {
-        return this._name;
+        return this._nombre;
     }
     public set name(value: string) {
-        this._name = value;
+        this._nombre = value;
     }
 
     public get description(): string {
-        return this._description;
+        return this._descripcion;
     }
     public set description(value: string) {
-        this._description = value;
+        this._descripcion = value;
     }
 
 
     public get category(): string {
-        return this._category;
+        return this._categoria;
     }
     public set category(value: string) {
-        this._category = value;
+        this._categoria = value;
     }
 
     public get price(): number {
-        return this._price;
+        return this._precio;
     }
     public set price(value: number) {
-        this._price = value;
+        this._precio = value;
     }
 
     public get quantity(): number {
-        return this._quantity;
+        return this._cantidad;
     }
     public set quantity(value: number) {
-        this._quantity = value;
+        this._cantidad = value;
     }
 
     public getImage(index: number): string {
-        return this._images[index];
+        return this._imagenes[index];
     }
     public setImage(value: string) {
-        this._images.push(value);
+        this._imagenes.push(value);
     }
 
     public get images(): string[] {
-        return this._images;
+        return this._imagenes;
     }
     public set images(value: string[]) {
-        this._images = value;
+        this._imagenes = value;
     }
 
     public get benefits(): string[] {
-        return this._benefits;
+        return this._beneficios;
     }
     public set benefits(value: string[]) {
-        this._benefits = value;
+        this._beneficios = value;
     }
 
 }
