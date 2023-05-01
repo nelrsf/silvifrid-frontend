@@ -5,7 +5,7 @@
     <br>
     <div id="recaptcha-container"></div>
     <br>
-    <button (click)="sendVerificationCode()">Enviar</button>
+    <button class="btn" (click)="sendVerificationCode()">Enviar</button>
 </div>
 
 <div *ngIf="dialogMode === 'verifyCode'">
@@ -13,7 +13,7 @@
     <p class="mb-3">Ingresa el código de verificación enviado a tu teléfono</p>
     <input class="mb-3" #code_field>
     <div>
-        <button (click)="validateCode($event)">Validar código</button>
+        <button class="btn" (click)="validateCode($event)">Validar código</button>
     </div>
 
 </div>

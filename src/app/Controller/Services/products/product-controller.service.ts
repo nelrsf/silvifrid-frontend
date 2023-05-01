@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ProductControllerService implements IProduct {
 
-  private url = environment.api_catalog_url;
+  private url = environment.api_url;
   constructor(private http: HttpClient) { }
   
   public getAllProducts():Observable<Object>{

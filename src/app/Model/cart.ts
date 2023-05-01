@@ -42,28 +42,20 @@ export class Cart {
         let arrayQuantitys: productQuantity[] = [];
         let count = 0;
         this.products.reduce<productQuantity>((pv, cv, index, arrP) => {
-            if (pv.product._id === cv.product._id) {
-                count = count + cv.quantity;
-            }
-            else {
-                arrayQuantitys.push({
-                    product: pv.product,
-                    quantity: count + cv.quantity
+            let cvOnArraQty = arrayQuantitys.find(
+                aq => {
+                    return aq.product._id === cv.product._id;
                 });
-                count = 0;
-            }
-            if (index === arrP.length - 1) {
-                arrayQuantitys.push({
-                    product: cv.product,
-                    quantity: count + cv.quantity
-                });
+            if (!cvOnArraQty) {
+                arrayQuantitys.push(cv);
+            } else {
+                cvOnArraQty.quantity += cv.quantity;
             }
             return cv;
         }, {
             product: new Product(),
             quantity: 0
         });
-        arrayQuantitys.splice(0, 1);
         this.products = arrayQuantitys;
     }
 

@@ -34,6 +34,7 @@ export class PurchaseContentComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.productQuantity = 1;
     this.updateContent();
   }
 

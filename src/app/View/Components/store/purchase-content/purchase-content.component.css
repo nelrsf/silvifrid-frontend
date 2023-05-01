@@ -232,7 +232,9 @@ footer a:hover {
   .product{
     grid-template-rows: none;
     grid-template-columns: 100%;
-    margin: 1% 10%}
+    margin: 1% 10%;
+    padding: 5% 1%;
+  }
   .product__info h1{
     font-size: 1.5em;
   }

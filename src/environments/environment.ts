@@ -5,13 +5,13 @@
 /**
  * @ignore
  */
-export const environment = {
+ export const environment = {
   production: false,
-  api_courier_url: "https://silvifrid-courier-3nmea3i3o-nelrsf.vercel.app",
-  api_catalog_url: "https://sf-catalog.onrender.com",
+  api_url: "https://silvifrid-gateway.vercel.app",
   avatars_main_route: "./../../../../../assets/img/avatars/",
   max_avatar_number_images: 13
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

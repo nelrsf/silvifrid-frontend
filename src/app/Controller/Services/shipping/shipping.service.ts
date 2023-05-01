@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ShippingService {
 
-  apiUrl: string = environment.api_courier_url;
+  apiUrl: string = environment.api_url;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -19,7 +19,7 @@ export class ShippingService {
 
   getCourierQoute(destinationCityId: number, productsQuantities: productQuantity[]) {
 
-    let requestUrl = environment.api_courier_url + "/product-quantity/getcourierquote";
+    let requestUrl = this.apiUrl + "/product-quantity/getcourierquote";
 
     let courierInfo: ICourier = {
       cityId: destinationCityId,
