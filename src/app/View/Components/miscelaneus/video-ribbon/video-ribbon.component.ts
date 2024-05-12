@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AssetControllerService } from 'src/app/Controller/Services/assets/asset-controller.service';
-import { Asset } from 'src/app/Model/asset';
+import { Asset } from 'src/app/Model/Asset';
+
 
 @Component({
   selector: 'app-video-ribbon',
