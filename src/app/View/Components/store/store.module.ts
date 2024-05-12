@@ -14,8 +14,6 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
 
-
-
 @NgModule({
   declarations: [
     ProductsViewComponent,
