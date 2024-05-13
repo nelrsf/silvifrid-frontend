@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
@@ -23,8 +24,9 @@ export class CartComponent implements OnInit {
   courierCost!: number;
   isLoadingCourierPrice: boolean = false;
   spinnerColor: ThemePalette = 'accent';
+  hashHex!: string;
 
-  constructor(private cartService: CartService,
+  constructor(private cartService: CartService, private htt: HttpClient,
     private router: Router, private shippingService: ShippingService) {
     this.cityControl = new FormControl();
     this.filteredCities = this.cityControl.valueChanges.pipe(
@@ -99,6 +101,20 @@ export class CartComponent implements OnInit {
 
   getTotalCostPlusCourier() {
     return (this.courierCost ? this.courierCost : 0) + (this.cart ? this.cart.getTotalPrice() : 0)
+  }
+
+  async pay(){
+    
+    // let cadenaConcatenada = "inv033439400COPkKca3l5cOJv4mXl5V84Aww"
+    // const encondedText = new TextEncoder().encode(cadenaConcatenada);
+    // const hashBuffer = await crypto.subtle.digest('SHA-256', encondedText);
+    // const hashArray = Array.from(new Uint8Array(hashBuffer));
+    // this.hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    this.htt.get("https://checkout.bold.co/payment/BTN_FIPQKJ68UP", {
+      headers: {
+        Authorization: "x-api-key 8DMcjDWPd7AjcrIfrUAlvSUL1VY_R1iWLhaG3mHiu4k"
+      }
+    }).subscribe()
   }
 
 

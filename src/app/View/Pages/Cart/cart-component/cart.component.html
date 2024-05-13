@@ -24,8 +24,8 @@
                             (keyup)="changeQuantity($event, i)">
                         <a (click)="addItemQuantity(i)" class="change-quantity">+</a>
                     </div>
-                    <div class="col currency-panel">COP {{productQ.product.price | number: '2.'}} <span (click)="deleteItem(i)"
-                            class="close">&#10005;</span></div>
+                    <div class="col currency-panel">COP {{productQ.product.price | number: '2.'}} <span
+                            (click)="deleteItem(i)" class="close">&#10005;</span></div>
                 </div>
             </div>
 
@@ -44,11 +44,12 @@
             <form>
                 <p>CIUDAD</p>
                 <div class="loading-cities" *ngIf="cities.length === 0">
-                    <mat-spinner class="mr-2" [color]="spinnerColor" [diameter]="15" [color]="'primary'"></mat-spinner> Cargando ciudades...
+                    <mat-spinner class="mr-2" [color]="spinnerColor" [diameter]="15" [color]="'primary'"></mat-spinner>
+                    Cargando ciudades...
                 </div>
 
-                <input matInput placeholder="Ingresa tu ciudad" [matAutocomplete]="auto"
-                    [formControl]="cityControl" *ngIf="cities.length !== 0">
+                <input matInput placeholder="Ingresa tu ciudad" [matAutocomplete]="auto" [formControl]="cityControl"
+                    *ngIf="cities.length !== 0">
                 <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelectionChange($event)">
                     <mat-option *ngFor="let city of filteredCities | async" [value]="city.NombreCiudad"
                         [id]="city.IdCiudad.toString()">
@@ -57,16 +58,24 @@
                 </mat-autocomplete>
                 <div class="courier-cost">
                     <p>COSTO DE ENVÍO</p>
-                    <mat-spinner *ngIf="isLoadingCourierPrice" [color]="spinnerColor" [diameter]="20" [color]="'primary'"></mat-spinner>
-                    <p *ngIf="!isLoadingCourierPrice">COP {{ courierCost  | number: '2.' }}</p>
+                    <mat-spinner *ngIf="isLoadingCourierPrice" [color]="spinnerColor" [diameter]="20"
+                        [color]="'primary'"></mat-spinner>
+                    <p *ngIf="!isLoadingCourierPrice">COP {{ courierCost | number: '2.' }}</p>
                 </div>
             </form>
             <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                 <div class="col">TOTAL COMPRA</div>
-                <div class="col text-right">COP {{getTotalCostPlusCourier()  | number: '2.'}}</div>
+                <div class="col text-right">COP {{getTotalCostPlusCourier() | number: '2.'}}</div>
             </div>
-            <button class="btn">REALIZAR PAGO</button>
+            <button (click)="pay()" class="btn">REALIZAR PAGO</button>
+            {{hashHex}}
+            <script data-bold-button data-order-id="inv0334" data-currency="COP" data-amount="39400"
+                data-api-key="8DMcjDWPd7AjcrIfrUAlvSUL1VY_R1iWLhaG3mHiu4k"
+                data-integrity-signature="13feccab12e8642b4a4f9fed7ef4c417febca8b3a4a7da102e3e7694ff1ed53a"
+                data-redirection-url="https://micomercio.com/pagos/resultado"></script>
+                
         </div>
     </div>
 
 </div>
+
