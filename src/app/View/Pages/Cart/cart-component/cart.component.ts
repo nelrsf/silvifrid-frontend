@@ -10,6 +10,7 @@ import { iCity } from 'src/app/Model/iCity';
 import { Transaction } from 'src/app/Model/transaction';
 import { TransactionsServiceService } from 'src/app/Controller/Services/transactions/transactions-service.service';
 import { AlertsService } from 'src/app/Controller/miscelaneous-services/alerts.service';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -83,7 +84,7 @@ export class CartComponent implements OnInit, AfterViewInit {
     this.boldScript.setAttribute("data-currency", transaction.divisa);
     this.boldScript.setAttribute("data-amount", transaction.total)
     this.boldScript.setAttribute("data-api-key", "8DMcjDWPd7AjcrIfrUAlvSUL1VY_R1iWLhaG3mHiu4k");
-    this.boldScript.setAttribute("data-redirection-url", "http://localhost:4200/#/success-payment");
+    this.boldScript.setAttribute("data-redirection-url", environment.payment_redirect_url + "/#/success-payment");
     this.boldScript.setAttribute("data-integrity-signature", transaction.hash);
 
   }
@@ -190,7 +191,7 @@ export class CartComponent implements OnInit, AfterViewInit {
   }
 
 
-  getAddressStr(transaction: Transaction){
+  getAddressStr(transaction: Transaction) {
     return transaction.dirección.dirección + '\n' + transaction.dirección.adicional + '\n' + transaction.dirección.ciudad
   }
 
