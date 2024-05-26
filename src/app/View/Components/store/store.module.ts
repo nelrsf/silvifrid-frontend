@@ -12,6 +12,7 @@ import { LayoutModule } from '../layout/layout.module';
 import { MiscelaneusModule } from '../miscelaneus/miscelaneus.module';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { PaymentSumaryComponent } from './payment-confirm/payment-sumary.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     PurchaseContentComponent,
     ProductsRibbonComponent,
     StoreComponent,
-    PurchaseComponent
+    PurchaseComponent,
+    PaymentSumaryComponent
   ],
   imports: [
     CommonModule,

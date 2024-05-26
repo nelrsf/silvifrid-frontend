@@ -1,0 +1,22 @@
+<div *ngIf="transactionState==='approved'" class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Pago Exitoso</h4>
+    <p>Gracias por tu compra, te informamos que tu compra ha sido aprobada y muy pronto nos comunicarmos contigo!</p>
+    <p>id de la transacción {{transactionId}}</p>
+    <hr>
+    <p class="mb-0">Cualquier inquietud puedes comunicarte al e-mail</p>
+</div>
+<div *ngIf="transactionState==='rejected'" class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Error en el pago</h4>
+  <p>Tu pago presentó un error, verifica la información y vuelve a realizar tu pago</p>
+  <p>id de la transacción {{transactionId}}</p>
+  <hr>
+  <p class="mb-0">Cualquier inquietud puedes comunicarte al e-mail</p>
+</div>
+
+<div *ngIf="transactionState!=='rejected' && transactionState!=='approved'" class="alert alert-secondary" role="alert">
+  <h4 class="alert-heading">Transacción pendiente por confirmación</h4>
+  <p>Tu compra está pendiente por confirmación</p>
+  <p>id de la transacción {{transactionId}}</p>
+  <hr>
+  <p class="mb-0">Cualquier inquietud puedes comunicarte al e-mail</p>
+</div>

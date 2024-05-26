@@ -8,6 +8,7 @@ import { PrivacyComponent } from './View/Pages/privacy/privacy.component';
 import { UserProfileComponent } from './View/Pages/user-profile/user-profile.component';
 import { CookiesPrivacyComponent } from './View/Pages/cookies-privacy/cookies-privacy.component';
 import { CartComponent } from './View/Pages/Cart/cart-component/cart.component';
+import { PaymentSumaryComponent } from './View/Components/store/payment-confirm/payment-sumary.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: '', component: StoreComponent },
   { path: 'privacy', component: PrivacyComponent},
   { path: 'cookies', component: CookiesPrivacyComponent},
-  { path: 'cart', component: CartComponent}
+  { path: 'cart', component: CartComponent},
+  { path: 'success-payment', component: PaymentSumaryComponent}
 ];
 
 @NgModule({

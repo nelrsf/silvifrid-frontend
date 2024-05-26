@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild, ViewEncapsulation } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { Router } from '@angular/router';
 import { map, Observable, startWith } from 'rxjs';
@@ -8,6 +7,10 @@ import { CartService } from 'src/app/Controller/Services/cart/cart.service';
 import { ShippingService } from 'src/app/Controller/Services/shipping/shipping.service';
 import { Cart } from 'src/app/Model/cart';
 import { iCity } from 'src/app/Model/iCity';
+import { Transaction } from 'src/app/Model/transaction';
+import { TransactionsServiceService } from 'src/app/Controller/Services/transactions/transactions-service.service';
+import { AlertsService } from 'src/app/Controller/miscelaneous-services/alerts.service';
+
 
 
 @Component({
@@ -15,29 +18,43 @@ import { iCity } from 'src/app/Model/iCity';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('paymentButtonContainer') paymentButtonContainer!: ElementRef;
 
   cart?: Cart;
   cities: iCity[] = [];
   filteredCities!: Observable<iCity[]>
-  cityControl: FormControl
+  cityControl: FormControl;
+  addressGroup: FormGroup;
   courierCost!: number;
   isLoadingCourierPrice: boolean = false;
   spinnerColor: ThemePalette = 'accent';
-  hashHex!: string;
+  boldScript: any;
+  totalCostPlusCourier: number = 0;
+  formMode: 'payment' | 'address' | 'sumary' = 'payment';
+  transaction!: Transaction;
 
-  constructor(private cartService: CartService, private htt: HttpClient,
-    private router: Router, private shippingService: ShippingService) {
+  constructor(private cartService: CartService, private alertService: AlertsService,
+    private router: Router, private shippingService: ShippingService, private transactionsService: TransactionsServiceService) {
     this.cityControl = new FormControl();
+    this.addressGroup = new FormGroup(
+      {
+        address: new FormControl('', [Validators.required, Validators.minLength(3)]),
+        aditionalInfo: new FormControl(''),
+        phone: new FormControl('', [Validators.required]),
+        name: new FormControl('', [Validators.required])
+      }
+    );
     this.filteredCities = this.cityControl.valueChanges.pipe(
       startWith(''),
       map(city => city ? this.filterCities(city) : this.cities.slice())
     );
   }
 
-  filterCities(name: string) {
-    return this.cities.filter(city =>
-      city.NombreCiudad.toLowerCase().indexOf(name.toLowerCase()) === 0);
+  ngAfterViewInit(): void {
+    // this.setPaymentButton();
+    this.updateTotalCostPlusCourier();
   }
 
   ngOnInit(): void {
@@ -46,12 +63,39 @@ export class CartComponent implements OnInit {
     this.getCities();
   }
 
+  filterCities(name: string) {
+    return this.cities.filter(city =>
+      city.NombreCiudad.toLowerCase().indexOf(name.toLowerCase()) === 0);
+  }
+
+
+
+  setPaymentButton(transaction: Transaction) {
+
+    if (!this.boldScript) {
+      this.boldScript = document.createElement("script");
+      this.boldScript.src = "https://checkout.bold.co/library/boldPaymentButton.js";
+      this.boldScript.setAttribute("data-bold-button", "");
+      this.paymentButtonContainer.nativeElement.appendChild(this.boldScript);
+    }
+
+    this.boldScript.setAttribute("data-order-id", transaction._id);
+    this.boldScript.setAttribute("data-currency", transaction.divisa);
+    this.boldScript.setAttribute("data-amount", transaction.total)
+    this.boldScript.setAttribute("data-api-key", "8DMcjDWPd7AjcrIfrUAlvSUL1VY_R1iWLhaG3mHiu4k");
+    this.boldScript.setAttribute("data-redirection-url", "http://localhost:4200/#/success-payment");
+    this.boldScript.setAttribute("data-integrity-signature", transaction.hash);
+
+  }
+
+
   navigateToProduct(productId: string) {
     this.router.navigate(['/purchase'], { queryParams: { _id: productId } });
   }
 
   deleteItem(index: number) {
     this.cart?.products.splice(index, 1);
+    this.updateTotalCostPlusCourier();
     this.cartService.setCartIntoLocalStorage();
   }
 
@@ -59,6 +103,7 @@ export class CartComponent implements OnInit {
     if (this.cart?.products[index] !== undefined) {
       this.cart.products[index].quantity++;
     }
+    this.updateTotalCostPlusCourier();
     this.cartService.setCartIntoLocalStorage();
   }
 
@@ -66,6 +111,7 @@ export class CartComponent implements OnInit {
     if (this.cart?.products[index] !== undefined) {
       this.cart.products[index].quantity--;
     }
+    this.updateTotalCostPlusCourier();
     this.cartService.setCartIntoLocalStorage();
   }
 
@@ -80,6 +126,7 @@ export class CartComponent implements OnInit {
       return;
     }
     this.cart.products[index].quantity = q;
+    this.updateTotalCostPlusCourier();
   }
 
   getCities() {
@@ -96,26 +143,57 @@ export class CartComponent implements OnInit {
     courierRequest.subscribe((response: any) => {
       this.isLoadingCourierPrice = false;
       this.courierCost = parseFloat(response.Results[0].tarifa);
-    })
+      this.updateTotalCostPlusCourier();
+    });
   }
 
-  getTotalCostPlusCourier() {
-    return (this.courierCost ? this.courierCost : 0) + (this.cart ? this.cart.getTotalPrice() : 0)
+  updateTotalCostPlusCourier() {
+    this.totalCostPlusCourier = (this.courierCost ? this.courierCost : 0) + (this.cart ? this.cart.getTotalPrice() : 0);
   }
 
-  async pay(){
-    
-    // let cadenaConcatenada = "inv033439400COPkKca3l5cOJv4mXl5V84Aww"
-    // const encondedText = new TextEncoder().encode(cadenaConcatenada);
-    // const hashBuffer = await crypto.subtle.digest('SHA-256', encondedText);
-    // const hashArray = Array.from(new Uint8Array(hashBuffer));
-    // this.hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-    this.htt.get("https://checkout.bold.co/payment/BTN_FIPQKJ68UP", {
-      headers: {
-        Authorization: "x-api-key 8DMcjDWPd7AjcrIfrUAlvSUL1VY_R1iWLhaG3mHiu4k"
-      }
-    }).subscribe()
+
+  goToPayment() {
+    this.formMode = 'address';
   }
+
+  sendTransaction() {
+    const transaction: Transaction = new Transaction();
+    transaction.dirección = {
+      adicional: this.addressGroup.controls['aditionalInfo'].value,
+      ciudad: this.cityControl.value,
+      dirección: this.addressGroup.controls['address'].value
+
+    }
+
+    transaction.divisa = 'COP';
+    transaction.total = this.totalCostPlusCourier;
+    transaction.nombre = this.addressGroup.controls['name'].value
+    transaction.telefono = this.addressGroup.controls['phone'].value
+    transaction.productos = this.cart?.products ? this.cart?.products : [];
+    this.formMode = 'sumary';
+
+    this.transactionsService.createTransaction(transaction)
+      .subscribe(
+        {
+          next: (response: Transaction) => {
+            this.transaction = response;
+            this.setPaymentButton(response);
+            this.paymentButtonContainer.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          },
+          error: (error: any) => {
+            this.alertService.failAlert("Error al procesar la transacción, vuleve a intentarlo");
+            console.log(error);
+            this.formMode = 'address';
+          }
+        }
+      )
+  }
+
+
+  getAddressStr(transaction: Transaction){
+    return transaction.dirección.dirección + '\n' + transaction.dirección.adicional + '\n' + transaction.dirección.ciudad
+  }
+
 
 
 }

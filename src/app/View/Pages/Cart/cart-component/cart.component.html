@@ -33,49 +33,152 @@
             </div>
         </div>
         <div class="col-md-4 summary">
-            <div>
-                <h5><b>Resumen</b></h5>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col" style="padding-left:0;">TOTAL</div>
-                <div class="col text-right">COP {{cart?.getTotalPrice() | number: '2.'}}</div>
-            </div>
-            <form>
-                <p>CIUDAD</p>
-                <div class="loading-cities" *ngIf="cities.length === 0">
-                    <mat-spinner class="mr-2" [color]="spinnerColor" [diameter]="15" [color]="'primary'"></mat-spinner>
-                    Cargando ciudades...
-                </div>
 
-                <input matInput placeholder="Ingresa tu ciudad" [matAutocomplete]="auto" [formControl]="cityControl"
-                    *ngIf="cities.length !== 0">
-                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelectionChange($event)">
-                    <mat-option *ngFor="let city of filteredCities | async" [value]="city.NombreCiudad"
-                        [id]="city.IdCiudad.toString()">
-                        <span>{{ city.NombreCiudad }}</span> |
-                    </mat-option>
-                </mat-autocomplete>
-                <div class="courier-cost">
-                    <p>COSTO DE ENVÍO</p>
-                    <mat-spinner *ngIf="isLoadingCourierPrice" [color]="spinnerColor" [diameter]="20"
-                        [color]="'primary'"></mat-spinner>
-                    <p *ngIf="!isLoadingCourierPrice">COP {{ courierCost | number: '2.' }}</p>
+            <div [ngSwitch]="formMode">
+                <div *ngSwitchCase="'payment'">
+                    <ng-container [ngTemplateOutlet]="paymentForm"></ng-container>
                 </div>
-            </form>
-            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                <div class="col">TOTAL COMPRA</div>
-                <div class="col text-right">COP {{getTotalCostPlusCourier() | number: '2.'}}</div>
+                <div *ngSwitchCase="'address'">
+                    <ng-container [ngTemplateOutlet]="addressForm"></ng-container>
+                </div>
+                <div *ngSwitchCase="'sumary'">
+                    <ng-container [ngTemplateOutlet]="sumary"></ng-container>
+                </div>
             </div>
-            <button (click)="pay()" class="btn">REALIZAR PAGO</button>
-            {{hashHex}}
-            <script data-bold-button data-order-id="inv0334" data-currency="COP" data-amount="39400"
-                data-api-key="8DMcjDWPd7AjcrIfrUAlvSUL1VY_R1iWLhaG3mHiu4k"
-                data-integrity-signature="13feccab12e8642b4a4f9fed7ef4c417febca8b3a4a7da102e3e7694ff1ed53a"
-                data-redirection-url="https://micomercio.com/pagos/resultado"></script>
-                
         </div>
     </div>
 
 </div>
 
+
+<ng-template #paymentForm>
+
+    <form>
+        <div>
+            <h4><b>Resumen</b></h4>
+        </div>
+        <hr>
+        <div class="row  mb-3">
+            <div class="col" style="padding-left:0;">TOTAL</div>
+            <div class="col text-right">COP {{cart?.getTotalPrice() | number: '2.'}}</div>
+        </div>
+        <p>CIUDAD</p>
+        <div class="loading-cities" *ngIf="cities.length === 0">
+            <mat-spinner class="mr-2" [color]="spinnerColor" [diameter]="15" [color]="'primary'"></mat-spinner>
+            Cargando ciudades...
+        </div>
+
+        <input matInput placeholder="Ingresa tu ciudad" [matAutocomplete]="auto" [formControl]="cityControl"
+            *ngIf="cities.length !== 0">
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelectionChange($event)">
+            <mat-option *ngFor="let city of filteredCities | async" [value]="city.NombreCiudad"
+                [id]="city.IdCiudad.toString()">
+                <span>{{ city.NombreCiudad }}</span> |
+            </mat-option>
+        </mat-autocomplete>
+        <div class="courier-cost">
+            <p>COSTO DE ENVÍO</p>
+            <mat-spinner *ngIf="isLoadingCourierPrice" [color]="spinnerColor" [diameter]="20"
+                [color]="'primary'"></mat-spinner>
+            <p *ngIf="!isLoadingCourierPrice">COP {{ courierCost | number: '2.' }}</p>
+        </div>
+        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+            <div class="col">TOTAL COMPRA</div>
+            <div class="col text-right">COP {{totalCostPlusCourier | number: '2.'}}</div>
+        </div>
+        <button (click)="goToPayment()" [disabled]="!courierCost || cart?.getTotalPrice()===0"
+            class="btn">CONTINUAR</button>
+    </form>
+
+</ng-template>
+
+<ng-template #addressForm>
+
+    <form [formGroup]="addressGroup">
+        <div>
+            <h4><b>Datos de envio</b></h4>
+        </div>
+        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+            <div class="col">TOTAL COMPRA</div>
+            <div class="col text-right">COP {{totalCostPlusCourier | number: '2.'}}</div>
+        </div>
+        <p>Ciudad</p>
+        <input [disabled]="true" placeholder="Ingresa tu ciudad" [value]="cityControl.value">
+
+        <p>Dirección</p>
+        <p class="text-danger mb-0"
+            *ngIf="addressGroup.controls['address'].invalid && addressGroup.controls['address'].touched">
+            Campo invalido
+        </p>
+        <input
+            [ngClass]="[addressGroup.controls['address'].invalid && addressGroup.controls['address'].touched  ? 'invalid' : '']"
+            formControlName="address" placeholder="Ingresa tu dirección" [value]="">
+
+        <p>Indicaciones adicionales</p>
+        <input formControlName="aditionalInfo" placeholder="torre, interior, apartamento, etc." [value]="">
+
+        <p>Teléfono</p>
+        <p class="text-danger mb-0"
+            *ngIf="addressGroup.controls['phone'].invalid && addressGroup.controls['phone'].touched">
+            Este campo es obligatorio
+        </p>
+        <input
+            [ngClass]="[addressGroup.controls['phone'].invalid && addressGroup.controls['phone'].touched  ? 'invalid' : '']"
+            formControlName="phone" class="mb-4" type="number" [disabled]="true" placeholder="Ingresa tu numero celular"
+            [value]="">
+
+        <p>Nombre</p>
+        <p class="text-danger mb-0"
+            *ngIf="addressGroup.controls['name'].invalid && addressGroup.controls['name'].touched">
+            Este campo es obligatorio
+        </p>
+        <input
+            [ngClass]="[addressGroup.controls['name'].invalid && addressGroup.controls['name'].touched  ? 'invalid' : '']"
+            formControlName="name" placeholder="Nombre de quien recibe la compra" [value]="">
+
+        <button (click)="sendTransaction()" [disabled]="!addressGroup.valid" class="btn">CONTINUAR</button>
+
+        <div [ngClass]="[courierCost && cart?.getTotalPrice()!==0?'':'payment-button-disabled']" #paymentButtonContainer
+            class="w-100 d-inline-flex justify-content-center my-2">
+        </div>
+
+
+    </form>
+
+</ng-template>
+
+
+<ng-template #sumary>
+
+    <div *ngIf="!transaction">
+        ...Validando información de pago
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <div *ngIf="transaction">
+        <div>
+            <h4><b>Resumen</b></h4>
+        </div>
+        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+            <div class="col">TOTAL COMPRA</div>
+            <div class="col text-right">COP {{totalCostPlusCourier | number: '2.'}}</div>
+        </div>
+
+
+        <p><b>Dirección</b></p>
+        <p>{{getAddressStr(transaction)}}</p>
+
+        <p><b>Teléfono</b></p>
+        <p>{{transaction.telefono}}</p>
+
+        <p><b>Nombre</b></p>
+        <p>{{transaction.nombre}}</p>
+
+
+    </div>
+
+    <div [ngClass]="[courierCost && cart?.getTotalPrice()!==0?'':'payment-button-disabled']" #paymentButtonContainer
+        class="w-100 d-inline-flex justify-content-center my-2">
+    </div>
+
+</ng-template>

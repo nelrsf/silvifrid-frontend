@@ -194,3 +194,12 @@ input[type=number]::-webkit-outer-spin-button {
     font-style: italic;
     color: gray;
 }
+
+.payment-button-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.invalid {
+    border-color: red;
+}
