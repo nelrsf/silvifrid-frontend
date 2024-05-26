@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'privacy', component: PrivacyComponent},
   { path: 'cookies', component: CookiesPrivacyComponent},
   { path: 'cart', component: CartComponent},
-  { path: 'success-payment', component: PaymentSumaryComponent}
+  { path: 'payment-sumary', component: PaymentSumaryComponent}
 ];
 
 @NgModule({
