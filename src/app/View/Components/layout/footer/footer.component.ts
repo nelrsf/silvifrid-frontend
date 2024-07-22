@@ -12,7 +12,7 @@ export class FooterComponent implements OnInit {
 
   
 
-  footDesc ="Somos una marca santandereana que elabora productos naturales y sotenibles al medio ambiente"
+  footDesc ="Somos una marca santandereana comercializadora de productos de belleza y cuidado personal."
 
   faPaperPlane = faPaperPlane; 
   faInstagram =faInstagram;

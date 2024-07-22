@@ -80,7 +80,7 @@ a
 }
 
 .product-details h4 a:hover {
-    color: rgba(217,194,162);
+    color: #600070;
     cursor: pointer;
 }
 
@@ -105,7 +105,7 @@ a
 .product-price {
 	width: 100%;
     font-size: 18px;
-    color:  rgb(165, 143, 113);
+    color:  #600070;
     font-weight: 600;
 }
 
@@ -130,5 +130,6 @@ a
 }
 
 .product-links a:hover {
-    color:  rgba(217,194,162);
+    color:  #600070 !important;
+    cursor: pointer;
 }

@@ -16,8 +16,8 @@ export class HeaderComponent implements OnInit {
   @ViewChild('navbar') navbar: ElementRef | undefined;
 
   title = "Silvifrid Organic"
-  subtitle = "Aromas y Belleza"
-  description = "Productos naturales para el cuidado de tu piel"
+  subtitle = "PRODUCTOS DE BELLEZA"
+  description = "Santander - Colombia"
   @ViewChild('edesc') eDesc: ElementRef | undefined;
   @ViewChild('etitle') eTitle: ElementRef | undefined;
   @ViewChild('esubtitle') eSubtitle: ElementRef | undefined;

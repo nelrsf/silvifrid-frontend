@@ -12,7 +12,10 @@ import { Product } from 'src/app/Model/product';
   templateUrl: './purchase-content.component.html',
   styleUrls: ['./purchase-content.component.css']
 })
-export class PurchaseContentComponent implements OnInit {
+export class PurchaseContentComponent implements OnInit, AfterViewInit {
+
+  @ViewChild("productInfo") productInfo!: ElementRef;
+  @ViewChild("productPhoto") productPhoto!: ElementRef;
 
   faPlus = faPlus;
   faMinus = faMinus;
@@ -30,6 +33,15 @@ export class PurchaseContentComponent implements OnInit {
         this.updateContent();
       }
     })
+
+  }
+  ngAfterViewInit(): void {
+    const resizeObserver = new ResizeObserver((entries: ResizeObserverEntry[]) => {
+      const height = entries[0].contentRect.height;
+      this.productInfo.nativeElement.style.height = height + 'px';
+    });
+
+    resizeObserver.observe(this.productPhoto.nativeElement)
   }
 
 
@@ -69,15 +81,15 @@ export class PurchaseContentComponent implements OnInit {
 
   checkNegativeQuantity(event: any) {
     let num = parseInt(event.target.value);
-    if(Number.isInteger(num)){
+    if (Number.isInteger(num)) {
       this.productQuantity = num;
     } else {
       this.productQuantity = 1;
     }
   }
 
-  addProductToCart(){
-    let cart =this.cartService.getCartFromLocalStorage();
+  addProductToCart() {
+    let cart = this.cartService.getCartFromLocalStorage();
     cart.addProduct({
       product: this.product,
       quantity: this.productQuantity
@@ -86,7 +98,7 @@ export class PurchaseContentComponent implements OnInit {
     this.getSuccessAlert();
   }
 
-  getSuccessAlert(){
+  getSuccessAlert() {
     let message = "<h1>Producto añadido correctamente!</h1>";
     let link = "<a href='/#/cart'> Quiero ver mi carrito de compras </a>"
     let html = message + "<br>" + link;
