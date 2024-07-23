@@ -6,5 +6,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 a {
-    color: blueviolet;
+    color: #ff869e;
+}
+
+a:hover {
+    color: rgb(223, 59, 252);
 }

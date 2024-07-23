@@ -1,17 +1,19 @@
 body {
-  background: linear-gradient(to left, rgb(231 87 255), rgb(255 255 255));
+  background: linear-gradient(to left, rgb(255 218 226), rgb(255 255 255));
   height: 25rem;
   box-shadow: 0 2px 7px #8a8888;
   margin-top: 2rem;
 }
 
 #button-addon1 {
-  color: rgba(217,194,162);
+  color: #ff869e;
 }
 
 i {
-  color: rgba(217,194,162);
+  color: #ff869e;
 }
+
+
 
 h4{
   font-size: 1.2rem;

@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 nav{
-    background: linear-gradient(to left, rgb(231 87 255), rgb(255 255 255));
+    background: linear-gradient(to left, rgb(255 218 226), rgb(255 255 255));
 }
 
 .nav-link {
-  color: #600070 !important;
+  color: #555555 !important;
 }
 
 .social-media {
@@ -61,7 +61,7 @@ button:focus {
 
     font-family: "Montserrat", sans-serif;
     font-weight: semibold;
-    color: #c729e2;
+    color: #555555;
   }
   .search-button:hover {
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);

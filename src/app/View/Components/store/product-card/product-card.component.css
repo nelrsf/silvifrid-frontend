@@ -105,7 +105,7 @@ a
 .product-price {
 	width: 100%;
     font-size: 18px;
-    color:  #600070;
+    color:  #ff869e;
     font-weight: 600;
 }
 
@@ -130,6 +130,6 @@ a
 }
 
 .product-links a:hover {
-    color:  #600070 !important;
+    color:  #ff869e !important;
     cursor: pointer;
 }

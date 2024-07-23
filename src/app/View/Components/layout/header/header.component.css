@@ -4,7 +4,7 @@
 
 h1 {
   font-family: 'Brittany Signature', sans-serif;
-  color: white;
+  color: #555555;
 }
 
 body {
@@ -23,11 +23,10 @@ body {
 .headline {
   position: relative;
   height: 400px;
-  color: white;
+  color: #555555;
   text-align: center;
   background: url("../../../../../assets/img/5.jpg") no-repeat;
   background-size: cover;
-  filter: sepia(0.3);
 }
 .headline:after {
   position: absolute;
@@ -79,7 +78,7 @@ nav {
   z-index: 10;
 }
 nav.scrolled {
-  background: white;
+  background: #555555;
 }
 nav ul {
   float: right;
@@ -93,19 +92,19 @@ nav li {
 }
 nav a {
   font-size: 0.9em;
-  color: white;
+  color: #555555;
   text-decoration: none;
   margin: 5px 0 0 20px;
   display: block;
 }
 nav a:hover {
-  color: #d8d8d8;
+  color: #3c3c3c;
 }
 
 .logo {
   height: 75px;
   float: left;
-  color: white;
+  color: #555555;
 }
 
 section {
