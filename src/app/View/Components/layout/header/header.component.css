@@ -2,9 +2,13 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 @import url('http://fonts.cdnfonts.com/css/brittany-signature');
 
+.header-text-color {
+  color: white!important;
+  filter: drop-shadow(2px 4px 6px black);
+}
+
 h1 {
   font-family: 'Brittany Signature', sans-serif;
-  color: #555555;
 }
 
 body {
@@ -44,8 +48,8 @@ body {
   width: 100%;
   opacity: 0;
   z-index: 10;
-  -webkit-animation: fade-in 3s 1s ease-in forwards;
-          animation: fade-in 3s 1s ease-in forwards;
+  -webkit-animation: fade-in 2s 1s ease-in forwards;
+          animation: fade-in 2s 1s ease-in forwards;
 }
 .inner h1 {
   text-align: end;
@@ -78,7 +82,7 @@ nav {
   z-index: 10;
 }
 nav.scrolled {
-  background: #555555;
+  background: white;
 }
 nav ul {
   float: right;
@@ -92,19 +96,19 @@ nav li {
 }
 nav a {
   font-size: 0.9em;
-  color: #555555;
+  color: white;
   text-decoration: none;
   margin: 5px 0 0 20px;
   display: block;
 }
 nav a:hover {
-  color: #3c3c3c;
+  color: rgb(234, 234, 234);
 }
 
 .logo {
   height: 75px;
   float: left;
-  color: #555555;
+  color: white;
 }
 
 section {

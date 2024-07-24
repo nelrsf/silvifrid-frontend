@@ -37,9 +37,9 @@ export class HeaderComponent implements OnInit {
     const elementTitle:any = this.eTitle?.nativeElement;
     const elementSubtitle:any = this.eSubtitle?.nativeElement;
     const elementDesc:any = this.eDesc?.nativeElement;
-    this.renderer2.setStyle(elementTitle, 'color', "rgba(85,85,85,"+(1-scrollFactor*0.8)+")");
-    this.renderer2.setStyle(elementSubtitle, 'color', "rgba(85,85,85,"+(1-scrollFactor)+")");
-    this.renderer2.setStyle(elementDesc, 'color', "rgba(85,85,85,"+(1-scrollFactor*0.9)+")");
+    this.renderer2.setStyle(elementTitle, 'color', "rgba(255,255,255,"+(1-scrollFactor*0.8)+")");
+    this.renderer2.setStyle(elementSubtitle, 'color', "rgba(255,255,255,"+(1-scrollFactor)+")");
+    this.renderer2.setStyle(elementDesc, 'color', "rgba(255,255,255,"+(1-scrollFactor*0.9)+")");
   }
 
 }
