@@ -52,17 +52,24 @@ export class ProductsViewComponent implements OnInit, AfterViewInit  {
       let ObjStr = JSON.stringify(data);
       let ObjJson = JSON.parse(ObjStr);
       this.productList = ObjJson;
-      this.datasource = new MatTableDataSource<Product>(this.productList);
+      this.datasource = new MatTableDataSource<Product>(this.sortProducts(this.productList));
       this.datasource.paginator = this.paginator;
       this.dataObservable = this.datasource.connect();
     });
+  }
+
+  sortProducts(productsList: Product[]){
+    return productsList.sort(
+      (a,b)=>{
+        return a.name.localeCompare(b.name);
+      }
+    )
   }
 
   ngOnInit(): void {
 
     this.productViewService.applyProductsFilter.subscribe(
       (value)=>{
-        console.log(this.dataObservable)
         this.datasource.filter = value;
       }
     );

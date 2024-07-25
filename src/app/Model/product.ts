@@ -5,6 +5,7 @@ export class Product {
     private _categoria!: string;
     private _beneficios!: string[];
     private _precio!: number;
+    private _precioExtendido!: number;
     private _cantidad!: number;
     private _imagenes!: string[];
     private _width!: number;
@@ -17,6 +18,14 @@ export class Product {
 
     constructor() {
         this.images = [""];        
+    }
+
+
+    public get extendedPrice(): number {
+        return this._precioExtendido;
+    }
+    public set extendedPrice(value: number) {
+        this._precioExtendido = value;
     }
 
     public get insuredCost(): number {
