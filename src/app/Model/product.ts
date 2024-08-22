@@ -13,12 +13,20 @@ export class Product {
     private _depth!: number;
     private _weight!: number;
     private _insuredCost!: number;
-
+    private _signature!: string;
 
 
     constructor() {
-        this.images = [""];        
+        this.images = [""];
     }
+
+    public get signature(): string {
+        return this._signature;
+    }
+    public set signature(value: string) {
+        this._signature = value;
+    }
+
 
 
     public get extendedPrice(): number {
