@@ -145,7 +145,7 @@ export class CartComponent implements OnInit, AfterViewInit {
       this.isLoadingCourierPrice = false;
       this.courierCost.value = parseFloat(response.Results[0].tarifa);
       this.courierCost.signature = response.signature;
-      this.courierCost.city = destinationCityId;
+      this.courierCost.city = parseInt(destinationCityId);
       this.updateTotalCostPlusCourier();
     });
   }
