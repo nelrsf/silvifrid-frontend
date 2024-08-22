@@ -7,7 +7,7 @@ import { CartService } from 'src/app/Controller/Services/cart/cart.service';
 import { ShippingService } from 'src/app/Controller/Services/shipping/shipping.service';
 import { Cart } from 'src/app/Model/cart';
 import { iCity } from 'src/app/Model/iCity';
-import { Transaction } from 'src/app/Model/transaction';
+import { ICourierCost, Transaction } from 'src/app/Model/transaction';
 import { TransactionsServiceService } from 'src/app/Controller/Services/transactions/transactions-service.service';
 import { AlertsService } from 'src/app/Controller/miscelaneous-services/alerts.service';
 import { environment } from 'src/environments/environment';
@@ -28,7 +28,7 @@ export class CartComponent implements OnInit, AfterViewInit {
   filteredCities!: Observable<iCity[]>
   cityControl: FormControl;
   addressGroup: FormGroup;
-  courierCost!: number;
+  courierCost: ICourierCost = { value: 0, signature: "" , city: 0};
   isLoadingCourierPrice: boolean = false;
   spinnerColor: ThemePalette = 'accent';
   boldScript: any;
@@ -143,13 +143,15 @@ export class CartComponent implements OnInit, AfterViewInit {
     let courierRequest = this.shippingService.getCourierQoute(destinationCityId, this.cartService.getCartFromLocalStorage().products);
     courierRequest.subscribe((response: any) => {
       this.isLoadingCourierPrice = false;
-      this.courierCost = parseFloat(response.Results[0].tarifa);
+      this.courierCost.value = parseFloat(response.Results[0].tarifa);
+      this.courierCost.signature = response.signature;
+      this.courierCost.city = destinationCityId;
       this.updateTotalCostPlusCourier();
     });
   }
 
   updateTotalCostPlusCourier() {
-    this.totalCostPlusCourier = (this.courierCost ? this.courierCost : 0) + (this.cart ? this.cart.getTotalPrice() : 0);
+    this.totalCostPlusCourier = (this.courierCost?.value ? this.courierCost.value : 0) + (this.cart ? this.cart.getTotalPrice() : 0);
   }
 
 
@@ -171,6 +173,8 @@ export class CartComponent implements OnInit, AfterViewInit {
     transaction.nombre = this.addressGroup.controls['name'].value
     transaction.telefono = this.addressGroup.controls['phone'].value
     transaction.productos = this.cart?.products ? this.cart?.products : [];
+    transaction.costoEnvio = this.courierCost;
+
     this.formMode = 'sumary';
 
     this.transactionsService.createTransaction(transaction)
@@ -193,6 +197,11 @@ export class CartComponent implements OnInit, AfterViewInit {
 
   getAddressStr(transaction: Transaction) {
     return transaction.dirección.dirección + '\n' + transaction.dirección.adicional + '\n' + transaction.dirección.ciudad
+  }
+
+
+  getCourierCostValue() {
+    return this.courierCost?.value || 0;
   }
 
 

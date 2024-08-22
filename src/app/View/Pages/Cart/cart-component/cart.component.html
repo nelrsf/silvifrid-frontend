@@ -80,7 +80,7 @@
             <p>COSTO DE ENVÍO</p>
             <mat-spinner *ngIf="isLoadingCourierPrice" [color]="spinnerColor" [diameter]="20"
                 [color]="'primary'"></mat-spinner>
-            <p *ngIf="!isLoadingCourierPrice">COP {{ courierCost | number: '2.' }}</p>
+            <p *ngIf="!isLoadingCourierPrice">COP {{ getCourierCostValue() | number: '2.' }}</p>
         </div>
         <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
             <div class="col">TOTAL COMPRA</div>
