@@ -15,8 +15,8 @@ export class HeaderComponent implements OnInit {
   faBars = faBars;
   @ViewChild('navbar') navbar: ElementRef | undefined;
 
-  title = "Silvifrid Organic"
-  subtitle = "PRODUCTOS DE BELLEZA"
+  title = "Silvifrid"
+  subtitle = "La tienda de los sueños"
   description = "Santander - Colombia"
   @ViewChild('edesc') eDesc: ElementRef | undefined;
   @ViewChild('etitle') eTitle: ElementRef | undefined;

@@ -1,6 +1,9 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 @import url('http://fonts.cdnfonts.com/css/brittany-signature');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 .header-text-color {
   color: white!important;
@@ -8,7 +11,15 @@
 }
 
 h1 {
-  font-family: 'Brittany Signature', sans-serif;
+  font-family: "Chewy", system-ui;
+}
+.img-fluid {
+  width:  auto;
+  height: 100%;
+  margin-left: 3%;
+  float: left;
+  border-radius: 50px;
+  padding: 20px 20px 20px 0;
 }
 
 body {
@@ -26,7 +37,7 @@ body {
 
 .headline {
   position: relative;
-  height: 400px;
+  height: 350px;
   color: #555555;
   text-align: center;
   background: url("../../../../../assets/img/5.jpg") no-repeat;
@@ -54,8 +65,8 @@ body {
 .inner h1 {
   text-align: end;
   margin-right: 5%;
-  font-size: 4em;
-  line-height: 1.2em;
+  font-size: 6em;
+  line-height: 0.35em;
   font-style: italic;
 }
 
@@ -73,7 +84,7 @@ body {
   margin-right: 5%;
   font-size: 1.4em;
   font-style: italic;
-  font-family: serif;
+  font-family: "Great Vibes", cursive;
 }
 
 nav {
@@ -141,7 +152,8 @@ section {
 
 @media (max-width: 900px)  {
   .inner h1{
-    font-size: 2rem;
+    font-size: 6rem;
+    margin-top: 10rem;
   }
   .inner{
     top: 20%;

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 nav{
-    background: linear-gradient(to left, rgb(255 218 226), rgb(255 255 255));
+    background: linear-gradient(to left, rgb(255 165 182), rgb(255 255 255))
 }
 
 .nav-link {
